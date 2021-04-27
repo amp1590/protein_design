@@ -1,0 +1,185 @@
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
+							<!--
+							<style> body {
+								background-color: slateblue;
+							} </style>
+							-->
+		<style>
+			.container {
+				position: relative;
+				text-align: center;
+				color: Black;
+			}
+
+			.header1 {
+				position:absolute;
+				top:115px;
+				left:196px;
+			}
+
+			.header2 {
+				position:absolute;
+				top:158px;
+				left:200px;
+			}
+
+			.text1 {
+				position:absolute;
+				top:210px;
+				left:202px;
+			}
+
+			.container .button {
+				position: absolute;
+				top: 360px;
+				left: 198px;
+				background-color: black;
+				color: white;
+				font-size: 16px;
+				padding: 15px 40px;
+				border: none;
+				cursor: pointer;
+				border-radius: 40px;
+				text-align: center;
+				font-family:"Montserrat";
+			}
+
+			/* .logobutton
+			{
+				padding:5px 25px;
+				top:2px;
+				left:200px;
+				background-color: white;
+				cursor:pointer;
+				border: none;
+				font-family:'Montserrat','Proxima Nova',sans-serif;
+				font-size:20px;
+				float:left;
+				
+			} */
+
+			.column1 {
+				float: left;
+				width: 50%;
+				margin-left: 200px;
+				/* padding-left: 200px;
+				padding-top: 50px; */
+			}			
+			
+			.column2 {
+				float: right;
+				width: 20%;
+				margin-right: 150px;
+			}
+
+			.row:after{
+				content: "";
+				display: table;
+				clear: both;
+			}
+
+		</style>
+
+		<!-- <title> home </title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link rel="stylsheet" href="{{ STATIC_URL }}style.css"> -->
+		
+		
+	</head>
+	
+	<body>
+
+		<style>
+			body {
+				margin: 0;
+				font-family: 'Proxima Nova', 'Gill Sans', sans-serif
+			}
+				.topnav {
+				overflow: hidden;
+				background-color: #FFFFFF
+			}
+			.topnav a {
+				float: right;
+				/* margin-right:30px; */
+				color: black;
+				text-align: center;
+				padding: 16px 15px;
+				text-decoration: none;
+				font-size: 16px;
+			}
+			.topnav a:hover {
+				background-color: #E8E8E8;
+				color: black;
+			}
+			.topnav a.active {
+				background-color: #E8E8E8;
+			color: black;
+			}
+		</style>
+		
+		<div class="topnav">
+			<style>
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding: 0;	
+			}
+			li {
+				display: inline;
+			}
+			</style>
+
+			<ul style="margin-right:200px">
+			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
+			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+			<li><a class = "active" href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
+			<li><a href="http://127.0.0.1:8000/get_sequence/">SEARCH</a></li>
+			<li><a href="http://127.0.0.1:/home/">HOME</a></li>
+			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
+		  	</ul>
+		</div>
+		
+		<div style="height:1px;background-color:#979797;"></div>	
+
+		<div class="container">
+			<div style="height:500px;background-color:#E2DDC0;"></div>
+			<div class="header1"><h style="text-align:'left';font-family:'Pangram', sans-serif; font-size:40px">Quick and Easy Searches</h></div>
+			<div class="header2"><h style="text-align:'left';font-family:'Pangram', sans-serif; font-size:40px">for 3D Protein Structure</h></div>
+			<div class="text1"><h style="color:#767676;text-align:'left';letter-spacing:1px;font-family:'Proxima Nova', sans-serif; font-size:18px">a web based tool for real time protein comparison and analysis</div>
+			<a href= "http://127.0.0.1:8000/get_sequence/">
+				<button class = "button">TRY IT NOW</button>
+			</a>
+
+		</div>
+
+		
+		<div style="margin-top:100px" class="row">
+			<div class="column1">
+				<h style="font-family:'Proxima Nova', sans-serif;font-size:30px;color:#2A3FAC"><b>3D SURFER 2.0</b></h>
+				<p style="line-height:24px;font-family:'Proxima Nova', sans-serif;font-size:18px;color:black">A web-based tool for real-time protein surface comparison and analysis. The server integrates a repertoire of methods to assist in high throughput screening and visualization of protein surface comparisons. 3D-Zernike Descriptors (3DZD) are utilized for the efficient comparison between a protein surface of a single chain, a single domain, or a single complex against all protein structures in the latest Protein Data Bank (PDB). Conveniently, the web interface also renders animated protein rotations, displays CATH protein structure classification codes, and structure alignment calculations using the Combinatorial Extension (CE) algorithm, and identifies geometric (i.e., pocket) regions on a given structure.</p>
+			</div>
+			<div class="column2">
+				<h style="font-family:'Proxima Nova', sans-serif;font-size:24px;color:#2A3FAC"><b>LATEST UPDATES</b></h>
+				<p style="height:1200px;width:250px;line-height:22px;font-family:'Proxima Nova', sans-serif;font-size:16px;color:black"><b>Surface representation:</b> Two options of surface representation are provided. The first one is the all-atom-surface representation, and the second is the backbone-atom-surface representation, which includes alpha C (CA), C, and N atoms in the main chain.
+					<br><br><b>Database:</b> 3DZD of protein chains, domains, complexes and a combination of three above are repertoried in the website.Batch mode: A batch mode is available to run multiple proteins for uses who would like to benchmark their methods against our approach.
+					<br><br><b>Maintenance:</b> The databases are weekly updated in pace with the latest PDB.</p>
+			</div>
+		</div>
+
+
+
+	</body>
+</html>
+
+						
+						
+						
+
+
+
+
+

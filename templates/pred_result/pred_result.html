@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
+		<!--
+		<style> body {
+			background-color: slateblue;
+		} </style>
+		-->
+		<!-- Style to create button -->
+		<style> 
+			.GFG { 
+				background-color: white; 
+				border: 2px solid black; 
+				color: green; 
+				padding: 5px 10px; 
+				text-align: center; 
+				display: inline-block; 
+				font-size: 20px; 
+				margin: 10px 30px; 
+				cursor: pointer; 
+				text-decoration:none; 
+			} 
+        /* } */
+    	</style> 
+		<title> result </title>
+	
+	</head>
+
+
+	<body>
+		<h1>Output </h1>
+		{{output}}
+
+		<!-- Inspite of omitting the 'download' keyword, it works same as the below!
+		<a href="{% url 'download_pred_prob' %}" class="btn btn-outline-success"> Download the result </a> 
+		-->
+		<!-- It successfully downloads but only as a link, not a typical button.
+		<a href="{% url 'download_pred_prob' %}" download class="btn btn-outline-success"> Download the result </a> 
+		-->
+		<!-- For typical button view, included the CSS style "GCG" above-->
+		
+		<!--{{result_file_path}} -->
+		<!-- <button onclick="window.location.href='https://w3docs.com';">Click Here</button> -->
+		<a href="{% url 'download_pred_prob' %}" class="GFG">
+        		Download the Predicted Sequence with the Probability Matrix
+		</a>
+		<!-- This does not work in djangoProjects
+		<a href="file:///D:\djangoProjects\result_files\result_1ete.pdb.txt" download> Download the result </a>
+		-->
+		<!-- <button type="submit" onclick="location.href='{% url 'download_file' %}'" name='mybtn2'>Download file</button> -->
+		<!--
+		<form action="" method="post">
+            {% csrf_token %}
+			<input type="button" value="Download result" onclick="/pred_result/download/" />
+		</form>
+		-->
+		
+		
+		<img src="{% static 'result/1ete-original.pdb_1_logo.png' %}" alt="logo_1" />
+		<img src="{% static 'result/1ete-original.pdb_2_logo.png' %}" alt="logo_2" />
+		<img src="{% static 'result/1ete-original.pdb_3_logo.png' %}" alt="logo_3" />
+		<img src="{% static 'result/1ete-original.pdb_4_logo.png' %}" alt="logo_4" />
+		
+		<!-- For typical button view, included the CSS style "GCG" above-->
+		<!--
+		<a href="{% url 'download_pred_prob' %}" download 
+			<button class="GFG">
+        		Download the result
+   			</button> 
+		</a>
+		-->
+	
+	</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset = "UTF-8">
+		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
+		<title> Sequence Prediction </title>
+	
+	</head>
+
+    <body style=background-color:#F9F8F5;>
+        <style>
+			body {
+				margin: 0;
+				font-family: 'Proxima Nova', 'Gill Sans', sans-serif
+			}
+				.topnav {
+				overflow: hidden;
+				background-color: #FFFFFF
+			}
+			.topnav a {
+				float: right;
+				/* margin-right:30px; */
+				color: black;
+				text-align: center;
+				padding: 16px 15px;
+				text-decoration: none;
+				font-size: 16px;
+			}
+			.topnav a:hover {
+				background-color: #E8E8E8;
+				color: black;
+			}
+			.topnav a.active {
+				background-color: #E8E8E8;
+			color: black;
+            }
+
+            .dropzone {
+                width:800px;
+                height:300px;
+                border:4px dashed #ccc;
+                color:darkslategray;
+                line-height:300px;
+                text-align:center;
+                border-radius:10px;
+                position:absolute;
+                margin-left:10%;
+                margin-top:20px;
+            }
+
+            .dropzone.dragover {
+                border-color:#000;
+                color:#000;
+            }
+			
+		</style>
+		
+		<div class="topnav">
+			<style>
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding: 0;	
+			}
+			li {
+				display: inline;
+			}
+			</style>
+
+			<ul style="margin-right:200px">
+			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
+			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+			<li><a href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
+			<li><a class="active"   href="http://127.0.0.1:8000/get_sequence/">SEARCH</a></li>
+			<li><a href="http://127.0.0.1:8000/home/">HOME</a></li>
+			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
+		  	</ul>
+		</div>
+		
+		<div style="height:1px;background-color:#979797;"></div>
+
+        <div style=float:left;margin-left:200px;margin-top:50px;> 
+        <h1 style=margin-bottom:60px>Protein Sequence Prediction </h1>
+        <form enctype="multipart/form-data" action="" method="post">
+            {% csrf_token %}
+            <div>
+                <p>
+                    {{form.pdb_file.label_tag}}
+                    {{form.pdb_file}}
+                    <!--{{form.pdb_file.help_text}} -->
+                    <br> N.B: The pdb file should follow the <a href="https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM" >standard pdb file format</a>
+                </p>
+            </div>
+
+            <div id="uploads"></div>
+            <div class="dropzone" id="dropzone"><header style="font-family:'Montserrat',sans-serif;font-size:20px">Drag and drop .pdb file here</header></div>
+
+            <script>
+                (function() {
+                    var dropzone = document.getElementById('dropzone');
+
+                    dropzone.ondragover = function() {
+                        this.className = 'dropzone dragover';
+                        return false;
+                    }
+
+                    dropzone.ondragleave = function() {
+                        this.className = 'dropzone';
+                        return false;
+                    }
+                    
+                    // var upload = function(files) {
+                    //     var formData = new formData(),
+                    //     xhr = new XMLHttpRequest(),
+                    //     x;
+                        
+                    //     for(x = 0; x < files.length; x = x+1){
+                    //         formData.append('file[]', files[x]);
+                    //     }
+
+                    //     xhr.open('post', 'upload.php');
+                    //     xhr.send(formData);
+                    // }
+
+                    // dropzone.ondrop = function(e) {
+                    //     e.preventDefault();
+                    //     this.className = 'dropzone';
+                    //     console.log(e);
+                    // }
+
+                    // dropzone.ondragleave = function() {
+                    //     this.classname = 'dropzone';
+                    //     return false;
+                    // }
+
+                }());
+                
+            </script>
+
+            
+            <br>
+            <div style="margin-top:350px"></div>
+            <div>
+                <p>
+                    {{form.chain_name.label_tag}}
+                    {{form.chain_name}}
+                </p>
+            </div>
+            <br>
+            <div>
+                <p>
+                    {{form.prediction_begin_range.label_tag}}
+                    {{form.prediction_begin_range}}
+                    {{form.prediction_end_range.label_tag}}
+                    {{form.prediction_end_range}}
+                    <!--{{form.prediction_end_range.help_text}} -->
+                    <br> N.B: In case of predicting through the whole chain, use [1,-1]
+                </p>
+            </div>
+            <br>
+            <div>
+                <p>
+                    {{form.model_name.label_tag}}
+                    {{form.model_name}}
+                </p>
+            </div>
+            <br>
+            <div>
+                <p>
+                    {{form.model_version.label_tag}}
+                    {{form.model_version}}
+                    <!--{{form.model_version.help_text}} -->
+                    <br> N.B: Use 30 for the model trained on ID30 training data; use 90 for the model trained on ID90 dataset.
+                </p>
+            </div>
+            <br>
+            <div>
+                <p>
+                    {{form.recipient.label_tag}}
+                    {{form.recipient}}
+                </p>
+            </div>
+            <br>
+            <!-- {{ form.as_p }} -->
+            <input type="submit" value="Submit">
+        </form>
+       </div>
+    </body>
+</html>
