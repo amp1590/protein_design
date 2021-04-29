@@ -1,3 +1,5 @@
+{% load static %}
+
 <html lang="en">
 	<head>
 		<meta charset = "UTF-8">
@@ -36,17 +38,28 @@
 				position: absolute;
 				top: 360px;
 				left: 198px;
-				background-color: black;
-				color: white;
+				background-color: #000000;
+				color: #FFFFFF;
 				font-size: 16px;
 				padding: 15px 40px;
-				border: none;
+				border: 2px solid #000000;
 				cursor: pointer;
 				border-radius: 40px;
 				text-align: center;
 				font-family:"Montserrat";
+				box-shadow: inset 0 0 0 0 #ff0000;
+				transition:ease-out 0.3s;
+				outline: none;
+				
 			}
 
+			.button:hover {
+				box-shadow: inset 300 0 0 0 #ff0000;
+				cursor: pointer;
+				color:#000000;
+				background-color:transparent;
+				
+			}
 			
 			.column1 {
 				float: left;
@@ -57,9 +70,27 @@
 			}			
 			
 			.column2 {
-				float: right;
-				width: 20%;
-				margin-right: 150px;
+				float:right;
+				width:22%;
+				position:absolute;
+				margin-left:63%;
+			}
+
+			.column3 {
+				float:left;
+				width:63%;
+			}
+
+			.column4 {
+				float:right;
+				width:28%;
+				position:absolute;
+				margin-left:63%;
+			}
+
+			.column5 {
+				float:right;
+				width:9%;
 			}
 
 			.row:after{
@@ -67,6 +98,7 @@
 				display: table;
 				clear: both;
 			}
+
 
 		</style>
 
@@ -86,7 +118,7 @@
 			}
 				.topnav {
 				overflow: hidden;
-				background-color: #FFFFFF
+				background-color: #FFFFFF;
 			}
 			.topnav a {
 				float: right;
@@ -103,7 +135,7 @@
 			}
 			.topnav a.active {
 				background-color: #E8E8E8;
-			color: black;
+				color: black;
 			}
 		</style>
 		
@@ -133,25 +165,39 @@
 		<div style="height:1px;background-color:#979797;"></div>	
 
 		<div class="container">
-			<div style="height:500px;background-color:#E2DDC0;"></div>
-			<div class="header1"><h style="text-align:'left';font-family:'Pangram', sans-serif; font-size:40px">Quick and Easy Searches</h></div>
-			<div class="header2"><h style="text-align:'left';font-family:'Pangram', sans-serif; font-size:40px">for 3D Protein Structure</h></div>
-			<div class="text1"><h style="color:#767676;text-align:'left';letter-spacing:1px;font-family:'Proxima Nova', sans-serif; font-size:18px">a web based tool for real time protein comparison and analysis</div>
+			<!-- <div style="height:500px;background-color:#E2DDC0;"></div> -->
+			<img style="object-fit:cover;height:500px;max-width:100%;overflow:hidden;" src="{% static 'background_img/protein_header.png' %}" alt="header_pic_2"style="width:100%;height:500px;">
+			<div class="header1"><h style="text-align:'left';font-family:'Pangram', sans-serif; font-size:40px;color:#000000;">Quick and Easy Searches</h></div>
+			<div class="header2"><h style="text-align:'left';font-family:'Pangram', sans-serif; font-size:40px;color:#000000;">for 3D Protein Structure</h></div>
+			<div class="text1"><h style="color:#000000;text-align:left;letter-spacing:1px;font-family:'Proxima Nova', sans-serif; font-size:18px">a web based tool for real time protein comparison and analysis</div>
+			<div style="position:absolute;top:294px;left:210px;height:2px;width:80px;background-color:#000000"></div>
+			
 			<a href= "http://127.0.0.1:8000/get_sequence/">
 				<button class = "button">TRY IT NOW</button>
+				
 			</a>
-
 		</div>
 
+		<!-- <div style="background-color:#F2F2F2;width:66%;height:40px;"></div>
+		<div style="background-color:#4A497B;width:20%;height:40px;"></div>
+		<div style="background-color:#F2F2F2;width:5%;height:40px;"></div> -->
+
 		
-		<div style="margin-top:100px" class="row">
-			<div class="column1">
-				<h style="font-family:'Proxima Nova', sans-serif;font-size:30px;color:#2A3FAC"><b>3D SURFER 2.0</b></h>
-				<p style="line-height:24px;font-family:'Proxima Nova', sans-serif;font-size:18px;color:black">A web-based tool for real-time protein surface comparison and analysis. The server integrates a repertoire of methods to assist in high throughput screening and visualization of protein surface comparisons. 3D-Zernike Descriptors (3DZD) are utilized for the efficient comparison between a protein surface of a single chain, a single domain, or a single complex against all protein structures in the latest Protein Data Bank (PDB). Conveniently, the web interface also renders animated protein rotations, displays CATH protein structure classification codes, and structure alignment calculations using the Combinatorial Extension (CE) algorithm, and identifies geometric (i.e., pocket) regions on a given structure.</p>
+		<div class="row">
+			<div style="background-color:#F2F2F2;height:50px;" class="column3"></div>
+			<div style="background-color:#4A497B;height:50px;" class="column4"></div>
+			<div style="background-color:#F2F2F2;height:50px;" class="column5"></div>
+		</div>
+
+
+		<div class="row">
+			<div style="padding-top:4.2%;padding-left:12%;padding-right:2%;" class="column3">
+				<h style="letter-spacing:2px;font-family:'Proxima Nova', sans-serif;font-size:36;color:#525188"><b>3D SURFER 2.0</b></h>
+				<p style="letter-spacing:0.5px;width:75%;line-height:24px;font-family:'Proxima Nova', sans-serif;font-size:18px;color:black">A web-based tool for real-time protein surface comparison and analysis. The server integrates a repertoire of methods to assist in high throughput screening and visualization of protein surface comparisons. 3D-Zernike Descriptors (3DZD) are utilized for the efficient comparison between a protein surface of a single chain, a single domain, or a single complex against all protein structures in the latest Protein Data Bank (PDB). Conveniently, the web interface also renders animated protein rotations, displays CATH protein structure classification codes, and structure alignment calculations using the Combinatorial Extension (CE) algorithm, and identifies geometric (i.e., pocket) regions on a given structure.</p>
 			</div>
-			<div class="column2">
-				<h style="font-family:'Proxima Nova', sans-serif;font-size:24px;color:#2A3FAC"><b>LATEST UPDATES</b></h>
-				<p style="height:1200px;width:250px;line-height:22px;font-family:'Proxima Nova', sans-serif;font-size:16px;color:black"><b>Surface representation:</b> Two options of surface representation are provided. The first one is the all-atom-surface representation, and the second is the backbone-atom-surface representation, which includes alpha C (CA), C, and N atoms in the main chain.
+			<div style="padding-top:5%;padding-left:4.5%;padding-right:1.5%;background-color:525188;" class="column2">
+				<h style="font-family:'Proxima Nova', sans-serif;font-size:24px;color:#FFF5BF"><b>LATEST UPDATES</b></h>
+				<p style="letter-spacing:0.5px;height:1200px;width:85%;line-height:22px;font-family:'Proxima Nova', sans-serif;font-size:15.5px;font-weight:lighter;color:#FFFFFF"><b>Surface representation:</b> Two options of surface representation are provided. The first one is the all-atom-surface representation, and the second is the backbone-atom-surface representation, which includes alpha C (CA), C, and N atoms in the main chain.
 					<br><br><b>Database:</b> 3DZD of protein chains, domains, complexes and a combination of three above are repertoried in the website.Batch mode: A batch mode is available to run multiple proteins for uses who would like to benchmark their methods against our approach.
 					<br><br><b>Maintenance:</b> The databases are weekly updated in pace with the latest PDB.</p>
 			</div>

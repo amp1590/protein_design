@@ -1,13 +1,16 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
 		<meta charset = "UTF-8">
 		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
 		<title> Sequence Prediction </title>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	
 	</head>
 
-    <body style=background-color:#F9F8F5;>
+    <body style=background-color:#FFFFFF;>
         <style>
 			body {
 				margin: 0;
@@ -52,6 +55,18 @@
                 border-color:#000;
                 color:#000;
             }
+
+            .container {
+				position: relative;
+				text-align: center;
+				color: Black;
+			}
+
+            .cheader1 {
+				position:absolute;
+				top:32%;
+				left:13%;
+			}
 			
 		</style>
 		
@@ -78,25 +93,34 @@
 		  	</ul>
 		</div>
 		
-		<div style="height:1px;background-color:#979797;"></div>
+		<div style="height:1px;background-color:#bbbbbb;"></div>
+        <div class="container">
+            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
+                src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
+            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">PROTEIN COMPARISON SEARCH</h></div>
+        </div>
+        
 
-        <div style=float:left;margin-left:200px;margin-top:50px;> 
-        <h1 style=margin-bottom:60px>Protein Sequence Prediction </h1>
+        <div style="float:left;margin-left:200px;margin-top:50px;padding-top:2%;"> 
         <form enctype="multipart/form-data" action="" method="post">
             {% csrf_token %}
-            <div>
-                <p>
-                    {{form.pdb_file.label_tag}}
-                    {{form.pdb_file}}
+            <div style="height:240px;width:1100px;background-color:#f5f5f5">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>UPLOAD FILE</b></header>
+                </div>
+                <p style="position:relative;left:4%;top:10%;">
+                    <span style="letter-spacing:1px;font-size:20px;color:black;"><b>{{form.pdb_file.label_tag}}</b></span>
+                    
+                    <form type="file"> {{form.pdb_file}} </form>
                     <!--{{form.pdb_file.help_text}} -->
-                    <br> N.B: The pdb file should follow the <a href="https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM" >standard pdb file format</a>
+                    <br><span style="position:relative;left:4%;top:8%;color:rgb(92, 92, 92);">N.B: The pdb file should follow the <a href="https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM" >standard pdb file format</a></span>
                 </p>
             </div>
 
+            
             <div id="uploads"></div>
-            <div class="dropzone" id="dropzone"><header style="font-family:'Montserrat',sans-serif;font-size:20px">Drag and drop .pdb file here</header></div>
-
-            <script>
+            <div class="dropzone" id="dropzone">
+                <script>
                 (function() {
                     var dropzone = document.getElementById('dropzone');
 
@@ -109,69 +133,63 @@
                         this.className = 'dropzone';
                         return false;
                     }
-                    
-                    // var upload = function(files) {
-                    //     var formData = new formData(),
-                    //     xhr = new XMLHttpRequest(),
-                    //     x;
-                        
-                    //     for(x = 0; x < files.length; x = x+1){
-                    //         formData.append('file[]', files[x]);
-                    //     }
-
-                    //     xhr.open('post', 'upload.php');
-                    //     xhr.send(formData);
-                    // }
-
-                    // dropzone.ondrop = function(e) {
-                    //     e.preventDefault();
-                    //     this.className = 'dropzone';
-                    //     console.log(e);
-                    // }
-
-                    // dropzone.ondragleave = function() {
-                    //     this.classname = 'dropzone';
-                    //     return false;
-                    // }
 
                 }());
                 
             </script>
+                <header style="font-family:'Montserrat',sans-serif;font-size:16px">Drag and drop .pdb file here</header>
+                <!-- <span>OR</span>  -->
+                <!-- <form>
+                    <input type="file" id="pdb_file" name="pdb_file">
+                </form> -->
+            </div>
+            
+
 
             
-            <br>
+
+            
+            
             <div style="margin-top:350px"></div>
-            <div>
-                <p>
-                    {{form.chain_name.label_tag}}
-                    {{form.chain_name}}
+            <div style="width:1100px;height:300px;background-color:#f5f5f5;">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>FILTERS</b></header>
+                </div>
+                
+                <!-- <div style="height:2px;color:black;width:80%;margin:auto;"></div> -->
+                <p> 
+                    <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.chain_name.label_tag}}</b></span>
+                    <span style="position:relative;top:22px;left:4%;">{{form.chain_name}}</span>
                 </p>
-            </div>
-            <br>
-            <div>
+                
                 <p>
-                    {{form.prediction_begin_range.label_tag}}
-                    {{form.prediction_begin_range}}
-                    {{form.prediction_end_range.label_tag}}
-                    {{form.prediction_end_range}}
+                    <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;"><b>{{form.prediction_begin_range.label_tag}}</b></span>
+                    <span style="position:relative;top:35px;left:4%;">{{form.prediction_begin_range}}</span>
+                    <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;margin-left:80px;"><b>{{form.prediction_end_range.label_tag}}</b></span>
+                    <span style="position:relative;top:35px;left:4%;">{{form.prediction_end_range}}</span>
                     <!--{{form.prediction_end_range.help_text}} -->
-                    <br> N.B: In case of predicting through the whole chain, use [1,-1]
+                    <br>
+                    <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">N.B: In case of predicting through the whole chain, use [1,-1]</span>
                 </p>
             </div>
             <br>
-            <div>
+            
+            <div style="width:1100px;height:300px;background-color:#f5f5f5">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>MODEL SETTINGS</b></header>
+                </div>
+
                 <p>
-                    {{form.model_name.label_tag}}
-                    {{form.model_name}}
+                    <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
+                    <span style="position:relative;top:22px;left:4%;">{{form.model_name}}</span>
                 </p>
-            </div>
-            <br>
-            <div>
+
                 <p>
-                    {{form.model_version.label_tag}}
-                    {{form.model_version}}
+                    <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;"><b>{{form.model_version.label_tag}}</b></span>
+                    <span style="position:relative;top:35px;left:4%;">{{form.model_version}}</span>
                     <!--{{form.model_version.help_text}} -->
-                    <br> N.B: Use 30 for the model trained on ID30 training data; use 90 for the model trained on ID90 dataset.
+                    <br>
+                    <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">N.B: Use 30 for the model trained on ID30 training data; use 90 for the model trained on ID90 dataset.</span>
                 </p>
             </div>
             <br>
@@ -181,9 +199,22 @@
                     {{form.recipient}}
                 </p>
             </div>
-            <br>
+			<br>
             <!-- {{ form.as_p }} -->
-            <input type="submit" value="Submit">
+            <div style="position:absolute;left:45%">
+                <input style="padding:12px 45px;
+                                top:20px;left:20px;
+                                font-size:16px;
+                                border-radius:20px;
+                                cursor: pointer;
+                                background-color:#7b5fbd;
+                                color:white;
+                                border:none;
+                                font-family:'Proxima-Nova',sans-serif;
+                                margin-bottom:40px;" 
+                type="submit" value="Submit">
+            </div>
+            
         </form>
        </div>
     </body>
