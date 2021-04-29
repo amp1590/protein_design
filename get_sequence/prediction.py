@@ -258,7 +258,7 @@ def LOGO(Probability, figure_name, xi_ind=1, top_rank=20, figsize=(10, 2.5)):
     ww_logo.ax.set_xticklabels(range (xi_ind,len(df)+xi_ind,2))
     ww_logo.ax.set_yticks([0, 0.5, 1.0])
     ww_logo.ax.set_ylabel('probability')
-    ww_logo.fig.savefig('./pred_result/static/result/' + figure_name) #setting relative path
+    ww_logo.fig.savefig('./pred_result/static/images/' + figure_name) #setting relative path
     plt.clf()
     plt.cla()
 
@@ -270,7 +270,7 @@ def BBO_figure(Probability, figure_name):
     plt.bar(x, y, width=1.0, color='orange', edgecolor='r',tick_label=AA_1, alpha=0.8)
     plt.ylabel('probability')
     plt.xlim([-2,20])
-    plt.savefig('./pred_result/static/result/' + figure_name)
+    plt.savefig('./pred_result/static/images/' + figure_name)
 
 
 #if __name__=='__main__': 
@@ -322,19 +322,40 @@ def main(pdbfile, target_chain, target_res, mode, model, pdb_file_name):
     #print prediction_prob
 
     # output result
+    '''
     original_seq = [convAA(aa) for aa in np.array(resname)[pred_range]]
     item = 'Input sequence:\n'+''.join(original_seq)+'\n'
-    item += '\nPredicted sequence:\n'+''.join([convAA(aa) for aa in prediction])+'\n'
+    predicted_seq = [convAA(aa) for aa in prediction]
+    item += '\nPredicted sequence:\n'+''.join(predicted_seq)+'\n'
     output_seq=("%s" %(item))
     print(output_seq)
- 
+    '''
+
+    original_seq = [convAA(aa) for aa in np.array(resname)[pred_range]]
+    original_seq = ''.join(original_seq)+'\n'
+    predicted_seq = [convAA(aa) for aa in prediction]
+    predicted_seq = ''.join(predicted_seq)+'\n'
+    
+    #Removing previous pdb's resultant .txt files
+    dir = './pred_result/static/result/'
+    for file in os.scandir(dir):
+        os.remove(file.path)
+
+    #Removing previous pdb's resultant images 
+    dir = './pred_result/static/images/'
+    for file in os.scandir(dir):
+        os.remove(file.path)
+
+    ''' #This was required for only showing the predicted sequence file
     s = pdb_file_name + "_seq.txt"
     result_file_path=os.path.join('./pred_result/static/result/',s)
+
     #f=open("./result_files/"+ result_file)
     print("IN .PY: ",result_file_path)
     f = open(result_file_path, 'w') #It might not be needed as I am not serving the output from here
     f.writelines(item)
     f.close()
+    '''
     
     s = pdb_file_name + "_prob.txt"
     prob_file_path=os.path.join('./pred_result/static/result/',s)
@@ -367,4 +388,12 @@ def main(pdbfile, target_chain, target_res, mode, model, pdb_file_name):
     else:
         BBO_figure(prediction_prob, pdb_file_name+'_logo.png')
 
-    return output_seq, output_prob
+
+    #To make a list of all the image names to render it to the template from view
+    files = os.listdir(dir)
+    image_names=[]
+    for f in files:
+        image_names.append(f)
+
+    #return output_seq, output_prob, image_names
+    return original_seq, predicted_seq, output_prob, image_names

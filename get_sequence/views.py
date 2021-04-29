@@ -33,7 +33,14 @@ def get_sequence(request):
             # process the data in form.cleaned_data as required
             # ...
             #1st parameter - input file
+
             # Uploaded file saving
+
+            #Deleting the all the media files before uploading:
+            dir = './media/'
+            for file in os.scandir(dir):
+                os.remove(file.path)
+
             uploaded_file=request.FILES['pdb_file']
             print(uploaded_file.name)
             fs = FileSystemStorage()
@@ -56,9 +63,9 @@ def get_sequence(request):
             recipient = form.cleaned_data['recipient'] #for email
             
             #output processing
-            output_seq, output_prob = main(pdb_file_path, chain_name, pred_range, model_name, model_version, pdb_file_name)
+            original_seq, predicted_seq, output_prob, image_names = main(pdb_file_path, chain_name, pred_range, model_name, model_version, pdb_file_name)
             
-            #Email sending with attachment part STARTS here
+            ###########Email sending with attachment part STARTS here##############
             
             subject = "[no reply] ProDCoNN server: job finished"
             message="Please have the attached two files as your protein prediction results."
@@ -80,9 +87,9 @@ def get_sequence(request):
 
             #email.attach_file(result_file_path+seq_file_name)
             email.attach_file(result_file_path+prob_file_name)
-            email.send()
+            #email.send() #will activate it later
 
-            #Email sending with attachment part ends here
+            #############Email sending with attachment part ends here #################
 
 
             global pass_val_prob
@@ -99,7 +106,7 @@ def get_sequence(request):
             response['Content-Disposition'] = "attachment; filename=%s" % filename
             return response
             '''
-            return render(request, 'pred_result/pred_result.html', {'output': output_seq })
+            return render(request, 'pred_result/pred_result.html', {'original_seq': original_seq, 'predicted_seq': predicted_seq, 'image_names': image_names,})
 
     # if a GET (or any other method) we'll create a blank form
     else:
