@@ -36,7 +36,7 @@ class NameForm(forms.Form):
     prediction_end_range = forms.IntegerField(initial='-1')
     model_name = forms.ChoiceField(choices = MODEL_NAME_CHOICES)
     model_version = forms.ChoiceField(choices = MODEL_VERSION_CHOICES)
-    recipient = forms.EmailField(label="Your email (results will be sent to this email)")
+    recipient = forms.EmailField(label="Your Email")
 
 class ContactForm(forms.Form):
     #subject = forms.CharField(max_length=100)

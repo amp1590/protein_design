@@ -6,7 +6,6 @@
 		<meta charset = "UTF-8">
 		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
 		<title> Sequence Prediction </title>
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	
 	</head>
 
@@ -56,7 +55,7 @@
                 color:#000;
             }
 
-            .container {
+			.container {
 				position: relative;
 				text-align: center;
 				color: Black;
@@ -67,7 +66,6 @@
 				top:32%;
 				left:13%;
 			}
-			
 		</style>
 		
 		<div class="topnav">
@@ -84,24 +82,25 @@
 
 			<ul style="margin-right:200px">
 			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
-			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
-			<li><a href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
-			<li><a class="active"   href="http://127.0.0.1:8000/get_sequence/">SEARCH</a></li>
-			<li><a href="http://127.0.0.1:8000/home/">HOME</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
 			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
 		  	</ul>
 		</div>
 		
-		<div style="height:1px;background-color:#bbbbbb;"></div>
+		<div style="height:1px;background-color:#979797;"></div>
         <div class="container">
             <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
                 src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
             <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">PROTEIN COMPARISON SEARCH</h></div>
         </div>
-        
 
-        <div style="float:left;margin-left:200px;margin-top:50px;padding-top:2%;"> 
+
+        <div style="float:left;margin-left:200px;margin-top:50px;padding-top:2%;">  
+        <h1 style=margin-bottom:60px>Protein Sequence Prediction </h1>
         <form enctype="multipart/form-data" action="" method="post">
             {% csrf_token %}
             <div style="height:240px;width:1100px;background-color:#f5f5f5">
@@ -109,18 +108,20 @@
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>UPLOAD FILE</b></header>
                 </div>
                 <p style="position:relative;left:4%;top:10%;">
-                    <span style="letter-spacing:1px;font-size:20px;color:black;"><b>{{form.pdb_file.label_tag}}</b></span>
-                    
-                    <form type="file"> {{form.pdb_file}} </form>
+                    <span style="letter-spacing:1px;font-size:18px;color:black;"><b>{{form.pdb_file.label_tag}}</b></span>
+                    {{form.pdb_file}}
                     <!--{{form.pdb_file.help_text}} -->
-                    <br><span style="position:relative;left:4%;top:8%;color:rgb(92, 92, 92);">N.B: The pdb file should follow the <a href="https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM" >standard pdb file format</a></span>
+                    <br>
+                    <br>
+                    <br>
+                    <span style="position:relative;top:4%;color:rgb(92, 92, 92);" >N.B: The pdb file should follow the <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.wwpdb.org_documentation_file-2Dformat-2Dcontent_format33_sect9.html-23ATOM&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=s4BMxyiB4LJPkxigb1cMiApnBtaFqTUm0dkX_9sMA3E&amp;e=">standard pdb file format</a></span>
                 </p>
             </div>
 
-            
             <div id="uploads"></div>
-            <div class="dropzone" id="dropzone">
-                <script>
+            <div class="dropzone" id="dropzone"><header style="font-family:'Montserrat',sans-serif;font-size:20px">Drag and drop .pdb file here</header></div>
+
+            <script>
                 (function() {
                     var dropzone = document.getElementById('dropzone');
 
@@ -133,35 +134,47 @@
                         this.className = 'dropzone';
                         return false;
                     }
+                    
+                    // var upload = function(files) {
+                    //     var formData = new formData(),
+                    //     xhr = new XMLHttpRequest(),
+                    //     x;
+                        
+                    //     for(x = 0; x < files.length; x = x+1){
+                    //         formData.append('file[]', files[x]);
+                    //     }
+
+                    //     xhr.open('post', 'upload.php');
+                    //     xhr.send(formData);
+                    // }
+
+                    // dropzone.ondrop = function(e) {
+                    //     e.preventDefault();
+                    //     this.className = 'dropzone';
+                    //     console.log(e);
+                    // }
+
+                    // dropzone.ondragleave = function() {
+                    //     this.classname = 'dropzone';
+                    //     return false;
+                    // }
 
                 }());
                 
             </script>
-                <header style="font-family:'Montserrat',sans-serif;font-size:16px">Drag and drop .pdb file here</header>
-                <!-- <span>OR</span>  -->
-                <!-- <form>
-                    <input type="file" id="pdb_file" name="pdb_file">
-                </form> -->
-            </div>
-            
-
 
             
-
-            
-            
+            <br>
             <div style="margin-top:350px"></div>
             <div style="width:1100px;height:300px;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>FILTERS</b></header>
                 </div>
-                
-                <!-- <div style="height:2px;color:black;width:80%;margin:auto;"></div> -->
-                <p> 
+                <p>
                     <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.chain_name.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.chain_name}}</span>
                 </p>
-                
+
                 <p>
                     <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;"><b>{{form.prediction_begin_range.label_tag}}</b></span>
                     <span style="position:relative;top:35px;left:4%;">{{form.prediction_begin_range}}</span>
@@ -171,9 +184,21 @@
                     <br>
                     <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">N.B: In case of predicting through the whole chain, use [1,-1]</span>
                 </p>
+
             </div>
+            <!-- <br>
+            <div>
+                <p>
+                    {{form.prediction_begin_range.label_tag}}
+                    {{form.prediction_begin_range}}
+                    {{form.prediction_end_range.label_tag}}
+                    {{form.prediction_end_range}}
+                    <!--{{form.prediction_end_range.help_text}} -->
+                    <!-- <br> N.B: In case of predicting through the whole chain, use [1,-1]
+                </p>
+            </div> -->
             <br>
-            
+
             <div style="width:1100px;height:300px;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>MODEL SETTINGS</b></header>
@@ -193,13 +218,18 @@
                 </p>
             </div>
             <br>
-            <div>
+            <div style="height:240px;width:1100px;background-color:#f5f5f5">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>EMAIL RESULTS</b></header>
+                </div>
                 <p>
-                    {{form.recipient.label_tag}}
-                    {{form.recipient}}
+                    <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.recipient.label_tag}}</b></span>
+                    <span style="position:relative;top:22px;left:4%;">{{form.recipient}}</span>
+                    <br>
+                    <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">N.B: The results will be sent to this email</span>
                 </p>
             </div>
-			<br>
+            <br>
             <!-- {{ form.as_p }} -->
             <div style="position:absolute;left:45%">
                 <input style="padding:12px 45px;
@@ -214,7 +244,6 @@
                                 margin-bottom:40px;" 
                 type="submit" value="Submit">
             </div>
-            
         </form>
        </div>
     </body>
