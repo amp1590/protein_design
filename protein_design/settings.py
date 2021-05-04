@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'home',
     'pred_result',
     'contact',
-    'refer_page'
+    'refer_page',
+    'demo'
 ]
 
 MIDDLEWARE = [

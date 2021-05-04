@@ -63,7 +63,8 @@
 		</form>
 		-->
         <br>
-		The following is the probability matrix of the predicted sequence in the form of images.<br>
+		<h2>Probability Matrix Images </h2>
+		The following images depicts the probability matrix of the predicted sequence using model {{model_name}}. <br>
 		The higher the probability, the larger is the size of the letter. <br>
 		{% for item in image_names %}
 			<img src="{% static 'images/' %}{{item}}" alt="logo_1" />

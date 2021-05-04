@@ -106,7 +106,7 @@ def get_sequence(request):
             response['Content-Disposition'] = "attachment; filename=%s" % filename
             return response
             '''
-            return render(request, 'pred_result/pred_result.html', {'original_seq': original_seq, 'predicted_seq': predicted_seq, 'image_names': image_names,})
+            return render(request, 'pred_result/pred_result.html', {'original_seq': original_seq, 'predicted_seq': predicted_seq, 'image_names': image_names, 'model_name': model_name, })
 
     # if a GET (or any other method) we'll create a blank form
     else:

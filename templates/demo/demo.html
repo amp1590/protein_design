@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
+		<!--
+		<style> body {
+			background-color: slateblue;
+		} </style>
+		-->
+		<!-- Style to create button -->
+		<style> 
+			.GFG { 
+				background-color: white; 
+				border: 2px solid black; 
+				color: green; 
+				padding: 5px 10px; 
+				text-align: center; 
+				display: inline-block; 
+				font-size: 20px; 
+				margin: 10px 30px; 
+				cursor: pointer; 
+				text-decoration:none; 
+			} 
+        /* } */
+    	</style> 
+		<title> demo </title>
+	
+	</head>
+
+
+	<body>
+	    
+	    <h1> Demos </h1>
+
+	    For all the demos presented here, the following field values were assumed constant: <br>
+		<br>
+		PDB file: 1ete.pdb <br>
+		Chain name: A<br>
+		Prediction begin range: 1<br>
+		Prediction end range: -1 <br>
+		Model version: 90<br>
+		<br>
+		The images of the result page differ only on the basis of the "Model name" field. So we are presenting demos on the basis of two different models.
+		But the downloaded/emailed file is same for any valid input. <br>
+		<h2>Demo 1 - Result page for model BBO: </h2>
+        <img src="{% static '/BBO.PNG' %}" alt="BBO image" />
+        <br>
+        <h2>Demo 2: Result page for model BBS: </h2>
+        <br>
+		<img src="{% static '/BBS.PNG' %}" alt="BBO image" />
+        <br>
+		<h2> Demo 3: Downloaded/Emailed Result File: </h2>
+		In the result page, user can download the result in the form of a .txt file. The same file is also sent to the user via email. <br>
+        <br> 
+		Column 1: It is the Input Amino acid which was given by the user in the PDB file field. <br>
+		Column 2: It is the predicted Amino acid by our model. <br>
+		Column 3-22: Rest of the 22 columns contains the probability of each amino acid for that particular position. <br>
+		<br> <br>
+		Here is a partial screenshot of what the downloaded/emailed file looks like. <br> <br>
+	    <img src="{% static '/result.PNG' %}" alt="result image" /> 
+
+		
+		
+	   
+	</body>
+
+</html>
