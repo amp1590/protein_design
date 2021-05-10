@@ -66,6 +66,29 @@
 				top:32%;
 				left:13%;
 			}
+
+            .button {
+				padding:14px 54px;
+                font-size:16px;
+                border-radius:60px;
+                cursor: pointer;
+                background-color:#7b5fbd;
+                color:white;
+                border:none;
+                font-family:'Proxima-Nova',sans-serif;
+                margin-bottom:40px;
+				box-shadow: inset 0 0 0 0 #ff0000;
+				transition:ease-out 0.2s;
+				outline: black;
+                letter-spacing:0.5px;
+			}
+
+            .button:hover {
+				box-shadow: inset 300 0 0 0 #ff0000;
+				cursor: pointer;
+				color:white;;
+				background-color:#3C3775;
+			}
 		</style>
 		
 		<div class="topnav">
@@ -84,6 +107,7 @@
 			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
 			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
 			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+            <li><a href="http://127.0.0.1:8000/demo/">DEMO</a></li>
 			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
 			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
@@ -99,11 +123,11 @@
         </div>
 
 
-        <div style="float:left;margin-left:200px;margin-top:50px;padding-top:2%;">  
-        <h1 style=margin-bottom:60px>Protein Sequence Prediction </h1>
+        <div style="width:100%;float:left;margin-left:13%;margin-top:50px;padding-top:2%;">  
+        
         <form enctype="multipart/form-data" action="" method="post">
             {% csrf_token %}
-            <div style="height:240px;width:1100px;background-color:#f5f5f5">
+            <div style="height:240px;width:73%;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>UPLOAD FILE</b></header>
                 </div>
@@ -117,11 +141,12 @@
                     <span style="position:relative;top:4%;color:rgb(92, 92, 92);" >N.B: The pdb file should follow the <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.wwpdb.org_documentation_file-2Dformat-2Dcontent_format33_sect9.html-23ATOM&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=s4BMxyiB4LJPkxigb1cMiApnBtaFqTUm0dkX_9sMA3E&amp;e=">standard pdb file format</a></span>
                 </p>
             </div>
+            <br>
+            <br>
+            {% comment %} <div id="uploads"></div>
+            <div class="dropzone" id="dropzone"><header style="font-family:'Montserrat',sans-serif;font-size:20px">Drag and drop .pdb file here</header></div> {% endcomment %}
 
-            <div id="uploads"></div>
-            <div class="dropzone" id="dropzone"><header style="font-family:'Montserrat',sans-serif;font-size:20px">Drag and drop .pdb file here</header></div>
-
-            <script>
+            {% comment %} <script>
                 (function() {
                     var dropzone = document.getElementById('dropzone');
 
@@ -161,24 +186,24 @@
 
                 }());
                 
-            </script>
+            </script> {% endcomment %}
 
             
-            <br>
-            <div style="margin-top:350px"></div>
-            <div style="width:1100px;height:300px;background-color:#f5f5f5;">
+            {% comment %} <br>
+            <div style="margin-top:350px"></div> {% endcomment %}
+            <div style="width:73%;height:300px;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>FILTERS</b></header>
                 </div>
                 <p>
-                    <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.chain_name.label_tag}}</b></span>
+                    <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.chain_name.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.chain_name}}</span>
                 </p>
 
                 <p>
-                    <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;"><b>{{form.prediction_begin_range.label_tag}}</b></span>
+                    <span style="position:relative;top:35px;left:4%;font-size:18px;color:black;"><b>{{form.prediction_begin_range.label_tag}}</b></span>
                     <span style="position:relative;top:35px;left:4%;">{{form.prediction_begin_range}}</span>
-                    <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;margin-left:80px;"><b>{{form.prediction_end_range.label_tag}}</b></span>
+                    <span style="position:relative;top:35px;left:4%;font-size:18px;color:black;margin-left:80px;"><b>{{form.prediction_end_range.label_tag}}</b></span>
                     <span style="position:relative;top:35px;left:4%;">{{form.prediction_end_range}}</span>
                     <!--{{form.prediction_end_range.help_text}} -->
                     <br>
@@ -198,19 +223,20 @@
                 </p>
             </div> -->
             <br>
+            <br>
 
-            <div style="width:1100px;height:300px;background-color:#f5f5f5">
+            <div style="width:73%;height:300px;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>MODEL SETTINGS</b></header>
                 </div>
 
                 <p>
-                    <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
+                    <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.model_name}}</span>
                 </p>
 
                 <p>
-                    <span style="position:relative;top:35px;left:4%;font-size:20px;color:black;"><b>{{form.model_version.label_tag}}</b></span>
+                    <span style="position:relative;top:35px;left:4%;font-size:18px;color:black;"><b>{{form.model_version.label_tag}}</b></span>
                     <span style="position:relative;top:35px;left:4%;">{{form.model_version}}</span>
                     <!--{{form.model_version.help_text}} -->
                     <br>
@@ -218,31 +244,23 @@
                 </p>
             </div>
             <br>
-            <div style="height:240px;width:1100px;background-color:#f5f5f5">
+            <br>
+            <div style="width:73%;height:240px;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>EMAIL RESULTS</b></header>
                 </div>
                 <p>
-                    <span style="position:relative;top:22px;left:4%;font-size:20px;color:black;"><b>{{form.recipient.label_tag}}</b></span>
+                    <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.recipient.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.recipient}}</span>
                     <br>
                     <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">N.B: The results will be sent to this email</span>
                 </p>
             </div>
             <br>
+            <br>
             <!-- {{ form.as_p }} -->
-            <div style="position:absolute;left:45%">
-                <input style="padding:12px 45px;
-                                top:20px;left:20px;
-                                font-size:16px;
-                                border-radius:20px;
-                                cursor: pointer;
-                                background-color:#7b5fbd;
-                                color:white;
-                                border:none;
-                                font-family:'Proxima-Nova',sans-serif;
-                                margin-bottom:40px;" 
-                type="submit" value="Submit">
+            <div style="position:absolute;left:43%">
+                <input class="button" type="submit" value="SUBMIT">
             </div>
         </form>
        </div>

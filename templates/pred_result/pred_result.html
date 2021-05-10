@@ -6,6 +6,7 @@
 	<head>
 		<meta charset = "UTF-8">
 		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
+		
 		<!--
 		<style> body {
 			background-color: slateblue;
@@ -17,14 +18,107 @@
 				background-color: white; 
 				border: 2px solid black; 
 				color: green; 
-				padding: 5px 10px; 
+				padding: 10px 20px; 
 				text-align: center; 
-				display: inline-block; 
 				font-size: 20px; 
 				margin: 10px 30px; 
 				cursor: pointer; 
 				text-decoration:none; 
 			} 
+
+			.gfg2 {
+				background-color:#7b5fbd;
+				border:none;
+				color:white;
+				padding:12px 20px;
+				text-align:center;
+				font-size:14px;
+				cursor:pointer;
+				display:inline-block;
+				border-radius:15px;
+				left:50%;
+				top:5%;
+			}
+
+			body {
+				margin: 0;
+				font-family: 'Proxima Nova', 'Gill Sans', sans-serif
+			}
+				.topnav {
+				overflow: hidden;
+				background-color: #FFFFFF
+			}
+			.topnav a {
+				float: right;
+				/* margin-right:30px; */
+				color: black;
+				text-align: center;
+				padding: 16px 15px;
+				text-decoration: none;
+				font-size: 16px;
+			}
+			.topnav a:hover {
+				background-color: #E8E8E8;
+				color: black;
+			}
+			.topnav a.active {
+				background-color: #E8E8E8;
+			color: black;
+            }
+
+			.container {
+				position: relative;
+				text-align: center;
+				color: Black;
+			}
+
+            .cheader1 {
+				position:absolute;
+				top:32%;
+				left:13%;
+			}
+
+			.tab {
+				overflow: hidden;
+				border:none;
+				background-color: #3C3775;
+				width:1100px;
+				margin:auto;
+			}
+			.tab button {
+				background-color: inherit;
+				float: left;
+				border: none;
+				outline: none;
+				cursor: pointer;
+				padding: 16px 24px;
+				transition: 0.3s;
+				font-size: 15px;
+				color:white;
+				letter-spacing:0.5px;
+				
+			}
+
+			.tab button:hover {
+				background-color: #1b1650;
+			}
+
+			.tab button.active {
+				background-color:#1b1650;
+			}
+
+			.tabcontent {
+				display:none;
+				padding:6px 12px;
+				border:1px solid #ccc;
+				border-top:none;
+				width:1076px;
+				margin:auto;
+				background-color:#F2F2F2;
+				padding-top:20px;
+			}
+
+			
         /* } */
     	</style> 
 		<title> result </title>
@@ -33,11 +127,77 @@
 
 
 	<body>
-		<h1>Output </h1>
+		<div class="topnav">
+			<style>
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding: 0;	
+			}
+			li {
+				display: inline;
+			}
+			</style>
+
+			<ul style="margin-right:200px">
+			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+            <li><a href="http://127.0.0.1:8000/demo/">DEMO</a></li>
+			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
+			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
+		  	</ul>
+		</div>
+		
+		<div style="height:1px;background-color:#979797;"></div>
+        <div class="container">
+            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
+                src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
+            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">OUTPUT</h></div>
+        </div>
+
+		<!-- <h1>Output </h1>
 		Input Sequence:<br>
 		{{original_seq}}
 		Predicted Sequence:<br>
-		{{predicted_seq}}
+		{{predicted_seq}} -->
+		
+		<div style="float:left;margin-left:200px;margin-top:50px;padding-top:2%;">  
+
+		<div class="tab">
+			<button class="tablinks" onclick="openTab(event, 'Input')" id="defaultOpen">INPUT SEQUENCE</button>
+			<button class="tablinks" onclick="openTab(event, 'Predicted')">PREDICTED SEQUENCE</button>
+			</div>	
+
+		<div id="Input" class="tabcontent">
+			<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">INPUT:</h>
+			<p style="font-family:'Courier New';letter-spacing:9ch;line-height:3ch;width:1000px;word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:2%;padding-left:100px;"><b>{{original_seq}}</b></p>
+		</div>
+		  
+		<div id="Predicted" class="tabcontent">
+			<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;">PREDICTED:</h>
+			<p style="font-family:'Courier New';letter-spacing:9ch;line-height:3ch;width:1000px;word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:2%;padding-left:100px;"><b>{{predicted_seq}}</b></p> 
+		</div>
+
+		<script>
+			function openTab(evt, name) {
+			  var i, tabcontent, tablinks;
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			  }
+			  tablinks = document.getElementsByClassName("tablinks");
+			  for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			  }
+			  document.getElementById(name).style.display = "block";
+			  evt.currentTarget.className += " active";
+			}
+			document.getElementById("defaultOpen").click();
+		</script>
+		  
 
 		<!-- Inspite of omitting the 'download' keyword, it works same as the below!
 		<a href="{% url 'download_pred_prob' %}" class="btn btn-outline-success"> Download the result </a> 
@@ -49,9 +209,12 @@
 		
 		<!--{{result_file_path}} -->
 		<!-- <button onclick="window.location.href='https://w3docs.com';">Click Here</button> -->
-		<a href="{% url 'download_pred_prob' %}" class="GFG">
-        		Download the Predicted Sequence with the Probability Matrix
-		</a>
+		<div style="margin:auto;width:800px;height:200px;text-align:center;">
+			<header style="margin:auto;margin-top:3%;font-family:'Montserrat';font-size:14px;margin-bottom:20px;">DOWNLOAD THE PREDICTED SEQUENCE WITH PROBABILITY MATRIX:</header>
+			<a href="{% url 'download_pred_prob' %}">
+					<button class="gfg2">DOWNLOAD</button>
+			</a>
+		</div>
 		<!-- This does not work in djangoProjects
 		<a href="file:///D:\djangoProjects\result_files\result_1ete.pdb.txt" download> Download the result </a>
 		-->
@@ -63,13 +226,30 @@
 		</form>
 		-->
         <br>
-		<h2>Probability Matrix Images </h2>
+
+		<div style="margin-top:20px;height:400px;width:1100px;background-color:#f5f5f5">
+			<div style="height:60px;background-color:#3C3775">
+				<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>PROBABILITY MATRIX IMAGES</b></header>
+			</div>
+			<p style="position:relative;left:4%;top:8%;">
+				<span style="font-size:16px;color:#555555;" >
+					The following images depicts the probability matrix of the predicted sequence using model {{model_name}}. <br>
+					The higher the probability, the larger is the size of the letter. <br>
+				</span>
+				<br>
+				<br>
+				{% for item in image_names %}
+					<img src="{% static 'images/' %}{{item}}" alt="logo_1" />
+				{% endfor %}
+		</div>
+
+		<!-- <h2>Probability Matrix Images </h2>
 		The following images depicts the probability matrix of the predicted sequence using model {{model_name}}. <br>
 		The higher the probability, the larger is the size of the letter. <br>
 		{% for item in image_names %}
 			<img src="{% static 'images/' %}{{item}}" alt="logo_1" />
 		{% endfor %}
-		
+		 -->
 		<!--
 		
 		<img src="{% static 'result/1ete-original.pdb_1_logo.png' %}" alt="logo_1" />

@@ -25,6 +25,62 @@
 				cursor: pointer; 
 				text-decoration:none; 
 			} 
+
+			body {
+				margin: 0;
+				font-family: 'Proxima Nova', 'Gill Sans', sans-serif
+			}
+				.topnav {
+				overflow: hidden;
+				background-color: #FFFFFF
+			}
+			.topnav a {
+				float: right;
+				/* margin-right:30px; */
+				color: black;
+				text-align: center;
+				padding: 16px 15px;
+				text-decoration: none;
+				font-size: 16px;
+			}
+			.topnav a:hover {
+				background-color: #E8E8E8;
+				color: black;
+			}
+			.topnav a.active {
+				background-color: #E8E8E8;
+			color: black;
+            }
+
+            .dropzone {
+                width:800px;
+                height:300px;
+                border:4px dashed #ccc;
+                color:darkslategray;
+                line-height:300px;
+                text-align:center;
+                border-radius:10px;
+                position:absolute;
+                margin-left:10%;
+                margin-top:20px;
+            }
+
+            .dropzone.dragover {
+                border-color:#000;
+                color:#000;
+            }
+
+			.container {
+				position: relative;
+				text-align: center;
+				color: Black;
+			}
+
+            .cheader1 {
+				position:absolute;
+				top:32%;
+				left:13%;
+			}
         /* } */
     	</style> 
 		<title> demo </title>
@@ -33,8 +89,96 @@
 
 
 	<body>
-	    
-	    <h1> Demos </h1>
+	    <div class="topnav">
+			<style>
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding: 0;	
+			}
+			li {
+				display: inline;
+			}
+			</style>
+
+			<ul style="margin-right:200px">
+			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+            <li><a class="active" href="http://127.0.0.1:8000/demo/">DEMO</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
+			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
+			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
+		  	</ul>
+		</div>
+		<div style="height:1px;background-color:#979797;"></div>
+		<div class="container">
+            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
+                src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
+            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">DEMOS</h></div>
+        </div>
+	`	
+		<div style="width:100%; margin-top:4%;margin-left:13%;">
+			<div style="width:73%;height:350px;background-color:#f5f5f5;">
+					<div style="height:60px;background-color:#6b6696">
+						<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>NOTE</b></header>
+					</div>
+					<div style="position:relative;left:5%;top:10%;width:90%">
+					<p style="margin-left:20px;color:rgb(92, 92, 92);">
+						For all the demos presented here, the following field values were assumed constant: <br><br>
+						PDB file: 1ete.pdb <br>
+						Chain name: A<br>
+						Prediction begin range: 1<br>
+						Prediction end range: -1 <br>
+						Model version: 90<br><br>
+						The images of the result page differ only on the basis of the "Model name" field. So we are presenting demos on the basis of two different models.
+						But the downloaded/emailed file is same for any valid input. <br>
+					</p>
+					</div>
+
+			</div>
+			<br><br>
+			<div style="width:73%;height:60px;background-color:#f5f5f5;">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>DEMO 1 - Model BBO Results</b></header>
+                </div>
+			</div>
+			<br>
+			<img style="margin-left:2%;" src="{% static '/BBO.PNG' %}" alt="BBO image" />
+			<br>
+			<br>
+			<div style="width:73%;height:60px;background-color:#f5f5f5;">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>DEMO 2 - Model BBS Results</b></header>
+                </div>
+			</div>
+			<br>
+			<img style="margin-left:2%;" src="{% static '/BBS.PNG' %}" alt="BBO image" />
+			<br>
+			<br>
+			<div style="width:73%;height:300px;background-color:#f5f5f5;">
+                <div style="height:60px;background-color:#3C3775">
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>DEMO 3 - Downloaded/Emailed Results</b></header>
+                </div>
+				<div style="position:relative;left:5%;top:2%;width:90%">
+				<p style="margin-left:20px;color:rgb(92, 92, 92);">
+						In the result page, user can download the result in the form of a .txt file. The same file is also sent to the user via email. <br>
+						<br> 
+						Column 1: It is the Input Amino acid which was given by the user in the PDB file field. <br>
+						Column 2: It is the predicted Amino acid by our model. <br>
+						Column 3-22: Rest of the 22 columns contains the probability of each amino acid for that particular position. <br>
+						<br> <br>
+						Here is a partial screenshot of what the downloaded/emailed file looks like. <br> <br>
+					</p>
+					</div>
+			</div>
+			<br>
+			<img style="margin-left:2%;" src="{% static '/BBO.PNG' %}" alt="BBO image" />
+
+
+		</div>
+	    {% comment %} <h1> Demos </h1>
 
 	    For all the demos presented here, the following field values were assumed constant: <br>
 		<br>
@@ -45,8 +189,8 @@
 		Model version: 90<br>
 		<br>
 		The images of the result page differ only on the basis of the "Model name" field. So we are presenting demos on the basis of two different models.
-		But the downloaded/emailed file is same for any valid input. <br>
-		<h2>Demo 1 - Result page for model BBO: </h2>
+		But the downloaded/emailed file is same for any valid input. <br> {% endcomment %}
+		{% comment %} <h2>Demo 1 - Result page for model BBO: </h2>
         <img src="{% static '/BBO.PNG' %}" alt="BBO image" />
         <br>
         <h2>Demo 2: Result page for model BBS: </h2>
@@ -61,7 +205,7 @@
 		Column 3-22: Rest of the 22 columns contains the probability of each amino acid for that particular position. <br>
 		<br> <br>
 		Here is a partial screenshot of what the downloaded/emailed file looks like. <br> <br>
-	    <img src="{% static '/result.PNG' %}" alt="result image" /> 
+	    <img src="{% static '/result.PNG' %}" alt="result image" />  {% endcomment %}
 
 		
 		
