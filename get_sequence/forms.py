@@ -31,11 +31,11 @@ letters = RegexValidator(r'^[A-Z]*$', 'Only single captial letters are allowed.'
 
 class NameForm(forms.Form):
     pdb_file = forms.FileField(label="PDB File")
-    chain_name = forms.CharField(initial="A", max_length=1, validators=[validate_alpha])
+    chain_name = forms.CharField(initial="A", max_length=1, validators=[validate_alpha], required=False)
     prediction_begin_range = forms.IntegerField(initial='1')
     prediction_end_range = forms.IntegerField(initial='-1')
-    model_name = forms.ChoiceField(choices = MODEL_NAME_CHOICES)
-    model_version = forms.ChoiceField(choices = MODEL_VERSION_CHOICES)
+    model_name = forms.ChoiceField(label="Model Type", choices = MODEL_NAME_CHOICES, required=False)
+    #model_version = forms.ChoiceField(choices = MODEL_VERSION_CHOICES)
     recipient = forms.EmailField(label="Your Email")
 
 class ContactForm(forms.Form):

@@ -258,7 +258,7 @@ def LOGO(Probability, figure_name, xi_ind=1, top_rank=20, figsize=(10, 2.5)):
     ww_logo.ax.set_xticklabels(range (xi_ind,len(df)+xi_ind,2))
     ww_logo.ax.set_yticks([0, 0.5, 1.0])
     ww_logo.ax.set_ylabel('probability')
-    ww_logo.fig.savefig('./pred_result/static/images/' + figure_name) #setting relative path
+    ww_logo.fig.savefig('./pred_result/static/pred_result/images/' + figure_name) #setting relative path
     plt.clf()
     plt.cla()
 
@@ -270,11 +270,11 @@ def BBO_figure(Probability, figure_name):
     plt.bar(x, y, width=1.0, color='orange', edgecolor='r',tick_label=AA_1, alpha=0.8)
     plt.ylabel('probability')
     plt.xlim([-2,20])
-    plt.savefig('./pred_result/static/images/' + figure_name)
+    plt.savefig('./pred_result/static/pred_result/images/' + figure_name)
 
 
 #if __name__=='__main__': 
-def main(pdbfile, target_chain, target_res, mode, model, pdb_file_name):  
+def main(pdbfile, target_chain, target_res, mode, pdb_file_name):  
     '''
     pdbfile: the input pdb file name
     data = [{atom:coordinate,...}, {atom:coordinate,...}...]
@@ -301,8 +301,10 @@ def main(pdbfile, target_chain, target_res, mode, model, pdb_file_name):
     
     if (mode != 'BBO') & (mode != 'BBS'):
         mode = 'BBO'
-    if (model != '30') & (model != '90'):
-        model = '90'
+    
+    #if (model != '30') & (model != '90'):
+    #   model = '90'
+    model='90'
         
     
     
@@ -337,12 +339,12 @@ def main(pdbfile, target_chain, target_res, mode, model, pdb_file_name):
     predicted_seq = ''.join(predicted_seq)+'\n'
     
     #Removing previous pdb's resultant .txt files
-    dir = './pred_result/static/result/'
+    dir = './pred_result/static/pred_result/result/'
     for file in os.scandir(dir):
         os.remove(file.path)
 
     #Removing previous pdb's resultant images 
-    dir = './pred_result/static/images/'
+    dir = './pred_result/static/pred_result/images/'
     for file in os.scandir(dir):
         os.remove(file.path)
 
@@ -358,7 +360,7 @@ def main(pdbfile, target_chain, target_res, mode, model, pdb_file_name):
     '''
     
     s = pdb_file_name + "_prob.txt"
-    prob_file_path=os.path.join('./pred_result/static/result/',s)
+    prob_file_path=os.path.join('./pred_result/static/pred_result/result/',s)
     head = 'Input_AA\tPred_AA\t\t'+'\t'.join(['A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y'])+'\n'
     item = head+'\n'.join([original_seq[i]+'\t\t'+convAA(prediction[i])+'\t\t'+'\t'.join(['%.2f'%(x*100) for x in prediction_prob[i][0]]) for i in range (len(prediction))])+'\n'
     output_prob=("%s" %(item))

@@ -58,12 +58,10 @@ def get_sequence(request):
             # 4th parameter
             model_name = form.cleaned_data['model_name']
             # 5th parameter
-            model_version = form.cleaned_data['model_version']
-            # 6th parameter
             recipient = form.cleaned_data['recipient'] #for email
             
             #output processing
-            original_seq, predicted_seq, output_prob, image_names = main(pdb_file_path, chain_name, pred_range, model_name, model_version, pdb_file_name)
+            original_seq, predicted_seq, output_prob, image_names = main(pdb_file_path, chain_name, pred_range, model_name, pdb_file_name)
             
             ###########Email sending with attachment part STARTS here##############
             
@@ -83,7 +81,7 @@ def get_sequence(request):
 
             #seq_file_name = pdb_file_name + '_seq.txt'
             prob_file_name = pdb_file_name + '_prob.txt'
-            result_file_path = './pred_result/static/result/'
+            result_file_path = './pred_result/static/pred_result/result/'
 
             #email.attach_file(result_file_path+seq_file_name)
             email.attach_file(result_file_path+prob_file_name)
@@ -143,7 +141,7 @@ def send_email(request):
             #if cc_myself:
             #    recipients.append(sender)
 
-            send_mail(subject, message, sender, recipients)
+            send_mail(subject, message, sender, recipient)
             return HttpResponseRedirect('get_sequence/pred_result.html')
     else:
             form = ContactForm()

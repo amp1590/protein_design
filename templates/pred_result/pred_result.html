@@ -147,7 +147,7 @@
 			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
 			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProdCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		
@@ -198,48 +198,27 @@
 			document.getElementById("defaultOpen").click();
 		</script>
 		  
-
-		<!-- Inspite of omitting the 'download' keyword, it works same as the below!
-		<a href="{% url 'download_pred_prob' %}" class="btn btn-outline-success"> Download the result </a> 
-		-->
-		<!-- It successfully downloads but only as a link, not a typical button.
-		<a href="{% url 'download_pred_prob' %}" download class="btn btn-outline-success"> Download the result </a> 
-		-->
-		<!-- For typical button view, included the CSS style "GCG" above-->
-		
-		<!--{{result_file_path}} -->
-		<!-- <button onclick="window.location.href='https://w3docs.com';">Click Here</button> -->
-		<div style="margin:auto;width:800px;height:200px;text-align:center;">
-			<header style="margin:auto;margin-top:3%;font-family:'Montserrat';font-size:14px;margin-bottom:20px;">DOWNLOAD THE PREDICTED SEQUENCE WITH PROBABILITY MATRIX:</header>
-			<a href="{% url 'download_pred_prob' %}">
-					<button class="gfg2">DOWNLOAD</button>
-			</a>
-		</div>
-		<!-- This does not work in djangoProjects
-		<a href="file:///D:\djangoProjects\result_files\result_1ete.pdb.txt" download> Download the result </a>
-		-->
-		<!-- <button type="submit" onclick="location.href='{% url 'download_file' %}'" name='mybtn2'>Download file</button> -->
-		<!--
-		<form action="" method="post">
-            {% csrf_token %}
-			<input type="button" value="Download result" onclick="/pred_result/download/" />
-		</form>
-		-->
         <br>
 
 		<div style="margin-top:20px;height:400px;width:1100px;background-color:#f5f5f5">
 			<div style="height:60px;background-color:#3C3775">
-				<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>PROBABILITY MATRIX IMAGES</b></header>
+				<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>PROBABILITY MATRIX</b></header>
+			</div>
+			<div style="margin:auto;width:800px;height:200px;text-align:center;">
+			<header style="margin:auto;margin-top:3%;font-family:'Montserrat';font-size:14px;margin-bottom:20px;">DOWNLOAD THE PREDICTED SEQUENCE WITH PROBABILITY MATRIX:</header>
+			<a href="{% url 'download_pred_prob' %}">
+					<button class="gfg2">DOWNLOAD</button>
+			</a>
 			</div>
 			<p style="position:relative;left:4%;top:8%;">
 				<span style="font-size:16px;color:#555555;" >
-					The following images depicts the probability matrix of the predicted sequence using model {{model_name}}. <br>
+					The following images depict the probability matrix of the predicted sequence using model {{model_name}}. <br>
 					The higher the probability, the larger is the size of the letter. <br>
 				</span>
 				<br>
 				<br>
 				{% for item in image_names %}
-					<img src="{% static 'images/' %}{{item}}" alt="logo_1" />
+					<img src="{% static '/pred_result/images/' %}{{item}}" alt="logo_1" />
 				{% endfor %}
 		</div>
 

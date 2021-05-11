@@ -111,7 +111,7 @@
 			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
 			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>PROTEIN SEQUENCING</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProdCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		
@@ -119,7 +119,7 @@
         <div class="container">
             <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
                 src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
-            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">PROTEIN COMPARISON SEARCH</h></div>
+            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">PROTEIN DESIGN</h></div>
         </div>
 
 
@@ -138,7 +138,7 @@
                     <br>
                     <br>
                     <br>
-                    <span style="position:relative;top:4%;color:rgb(92, 92, 92);" >N.B: The pdb file should follow the <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.wwpdb.org_documentation_file-2Dformat-2Dcontent_format33_sect9.html-23ATOM&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=s4BMxyiB4LJPkxigb1cMiApnBtaFqTUm0dkX_9sMA3E&amp;e=">standard pdb file format</a></span>
+                    <span style="position:relative;top:4%;color:rgb(92, 92, 92);" >The pdb file should follow the <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.wwpdb.org_documentation_file-2Dformat-2Dcontent_format33_sect9.html-23ATOM&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=s4BMxyiB4LJPkxigb1cMiApnBtaFqTUm0dkX_9sMA3E&amp;e=">standard pdb file format</a></span>
                 </p>
             </div>
             <br>
@@ -207,7 +207,7 @@
                     <span style="position:relative;top:35px;left:4%;">{{form.prediction_end_range}}</span>
                     <!--{{form.prediction_end_range.help_text}} -->
                     <br>
-                    <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">N.B: In case of predicting through the whole chain, use [1,-1]</span>
+                    <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">In case of predicting through the whole chain, use [1,-1]</span>
                 </p>
 
             </div>
@@ -232,16 +232,13 @@
 
                 <p>
                     <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
-                    <span style="position:relative;top:22px;left:4%;">{{form.model_name}}</span>
+                    <span style="position:relative;top:22px;left:4%;">{{form.model_name}}</span> <br>
+                     <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">
+                    BBO: Backbone Only model <br>
+                    BBS: Backbone with Sequence model <br> </span>
+
                 </p>
 
-                <p>
-                    <span style="position:relative;top:35px;left:4%;font-size:18px;color:black;"><b>{{form.model_version.label_tag}}</b></span>
-                    <span style="position:relative;top:35px;left:4%;">{{form.model_version}}</span>
-                    <!--{{form.model_version.help_text}} -->
-                    <br>
-                    <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">N.B: Use 30 for the model trained on ID30 training data; use 90 for the model trained on ID90 dataset.</span>
-                </p>
             </div>
             <br>
             <br>
@@ -253,7 +250,7 @@
                     <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.recipient.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.recipient}}</span>
                     <br>
-                    <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">N.B: The results will be sent to this email</span>
+                    <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">The results will be sent to this email.</span>
                 </p>
             </div>
             <br>
