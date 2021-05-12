@@ -28,7 +28,7 @@ SECRET_KEY = '(%0l4vm&i@nblmnebzn381ard_hp2^4_s*if0d00k8mg*%tz83'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','128.186.4.124', '127.0.0.1']
+ALLOWED_HOSTS = ['mars.stat.fsu.edu', '128.186.4.124', 'localhost', '127.0.0.1']
 
 
 # Application definition
