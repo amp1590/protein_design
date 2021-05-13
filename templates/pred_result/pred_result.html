@@ -66,24 +66,19 @@
 			color: black;
             }
 
-			.container {
-				position: relative;
-				text-align: center;
-				color: Black;
-			}
-
             .cheader1 {
 				position:absolute;
-				top:32%;
+				top:15.2%;
 				left:13%;
 			}
 
 			.tab {
 				overflow: hidden;
-				border:none;
+				border:1px solid #3C3775;
 				background-color: #3C3775;
-				width:1100px;
+				width:73%;
 				margin:auto;
+
 			}
 			.tab button {
 				background-color: inherit;
@@ -109,15 +104,25 @@
 
 			.tabcontent {
 				display:none;
-				padding:6px 12px;
 				border:1px solid #ccc;
 				border-top:none;
-				width:1076px;
+				width:73%;
 				margin:auto;
 				background-color:#F2F2F2;
 				padding-top:20px;
 			}
 
+			.footer {
+				position:relative;
+				margin-top:10%;
+				background-color:#202020;
+				width:100%;
+				height:12%;
+				padding-left:12%;
+				padding-right:12%;
+				padding-top:3%;
+				padding-bottom:3%;
+			}
 			
         /* } */
     	</style> 
@@ -141,21 +146,21 @@
 
 			<ul style="margin-right:200px">
 			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+			<li><a href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
             <li><a href="http://127.0.0.1:8000/demo/">DEMO</a></li>
-			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
+			<li><a class="active" href="http://127.0.0.1:8000/get_sequence/">PROTEIN DESIGN</a></li>
+			<li><a href="http://127.0.0.1:8000/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProdCoNN 1.0</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
-		
 		<div style="height:1px;background-color:#979797;"></div>
+
         <div class="container">
             <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
                 src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
-            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">OUTPUT</h></div>
+            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">RESULTS</h></div>
         </div>
 
 		<!-- <h1>Output </h1>
@@ -164,63 +169,80 @@
 		Predicted Sequence:<br>
 		{{predicted_seq}} -->
 		
-		<div style="float:left;margin-left:200px;margin-top:50px;padding-top:2%;">  
 
-		<div class="tab">
-			<button class="tablinks" onclick="openTab(event, 'Input')" id="defaultOpen">INPUT SEQUENCE</button>
-			<button class="tablinks" onclick="openTab(event, 'Predicted')">PREDICTED SEQUENCE</button>
-			</div>	
+		<div style="width:100%;float:left;;margin-top:4%;">  
 
-		<div id="Input" class="tabcontent">
-			<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">INPUT:</h>
-			<p style="font-family:'Courier New';letter-spacing:9ch;line-height:3ch;width:1000px;word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:2%;padding-left:100px;"><b>{{original_seq}}</b></p>
-		</div>
-		  
-		<div id="Predicted" class="tabcontent">
-			<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;">PREDICTED:</h>
-			<p style="font-family:'Courier New';letter-spacing:9ch;line-height:3ch;width:1000px;word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:2%;padding-left:100px;"><b>{{predicted_seq}}</b></p> 
-		</div>
+			<div class="tab">
+				<button class="tablinks" onclick="openTab(event, 'Sequences')" id="defaultOpen">SEQUENCES</button>
+				<button class="tablinks" onclick="openTab(event, 'Input')">FORMATTED INPUT</button>
+				<button class="tablinks" onclick="openTab(event, 'Predicted')">FORMATTED PREDICTED</button>
+				</div>	
 
-		<script>
-			function openTab(evt, name) {
-			  var i, tabcontent, tablinks;
-			  tabcontent = document.getElementsByClassName("tabcontent");
-			  for (i = 0; i < tabcontent.length; i++) {
-				tabcontent[i].style.display = "none";
-			  }
-			  tablinks = document.getElementsByClassName("tablinks");
-			  for (i = 0; i < tablinks.length; i++) {
-				tablinks[i].className = tablinks[i].className.replace(" active", "");
-			  }
-			  document.getElementById(name).style.display = "block";
-			  evt.currentTarget.className += " active";
-			}
-			document.getElementById("defaultOpen").click();
-		</script>
-		  
-        <br>
-
-		<div style="margin-top:20px;height:400px;width:1100px;background-color:#f5f5f5">
-			<div style="height:60px;background-color:#3C3775">
-				<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>PROBABILITY MATRIX</b></header>
+			<div id="Sequences" class="tabcontent container">
+				<h style=";font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">INPUT:</h>
+				<p style="width:84%;font-family:'Courier New';word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:3%;padding-left:4%;padding-right:4%;"><b>{{original_seq}}</b></p>
+				<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">PREDICTED:</h>
+				<p style="width:84%;font-family:'Courier New';word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:5%;padding-left:4%;padding-right:4%;"><b>{{predicted_seq}}</b></p> 
 			</div>
-			<div style="margin:auto;width:800px;height:200px;text-align:center;">
-			<header style="margin:auto;margin-top:3%;font-family:'Montserrat';font-size:14px;margin-bottom:20px;">DOWNLOAD THE PREDICTED SEQUENCE WITH PROBABILITY MATRIX:</header>
-			<a href="{% url 'download_pred_prob' %}">
-					<button class="gfg2">DOWNLOAD</button>
-			</a>
+
+			<div id="Input" class="tabcontent">
+				<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">INPUT:</h>
+				<p style="font-family:'Courier New';letter-spacing:9ch;line-height:3ch;width:90%;word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:4%;margin-left:10%;"><b>{{original_seq}}</b></p>
 			</div>
-			<p style="position:relative;left:4%;top:8%;">
-				<span style="font-size:16px;color:#555555;" >
-					The following images depict the probability matrix of the predicted sequence using model {{model_name}}. <br>
-					The higher the probability, the larger is the size of the letter. <br>
-				</span>
-				<br>
-				<br>
-				{% for item in image_names %}
-					<img src="{% static '/pred_result/images/' %}{{item}}" alt="logo_1" />
-				{% endfor %}
+			
+			<div id="Predicted" class="tabcontent">
+				<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;">PREDICTED:</h>
+				<p style="font-family:'Courier New';letter-spacing:9ch;line-height:3ch;width:90%;word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:4%;margin-left:10%;"><b>{{predicted_seq}}</b></p> 
+			</div>
+
+			<script>
+				function openTab(evt, name) {
+				var i, tabcontent, tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for (i = 0; i < tabcontent.length; i++) {
+					tabcontent[i].style.display = "none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+				for (i = 0; i < tablinks.length; i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				}
+				document.getElementById(name).style.display = "block";
+				evt.currentTarget.className += " active";
+				}
+				document.getElementById("defaultOpen").click();
+			</script>
+			<br>
+			<br>
+			<br>
+			<div style="margin:auto;margin-top:20px;padding-bottom:4%;width:73%;background-color:#f5f5f5">
+				<div style="height:60px;background-color:#3C3775">
+					<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>PROBABILITY MATRIX</b></header>
+				</div>
+				<div style="margin:auto;width:;height:5%;text-align:center;">
+				<header style="margin:auto;margin-top:3%;font-family:'Montserrat';font-size:14px;margin-bottom:20px;">DOWNLOAD THE PREDICTED SEQUENCE WITH PROBABILITY MATRIX:</header>
+				<a href="{% url 'download_pred_prob' %}">
+						<button class="gfg2">DOWNLOAD</button>
+				</a>
+				</div>
+				<p style="position:relative;left:4%;top:8%;">
+					<span style="font-size:16px;color:#555555;" >
+						The following images depict the probability matrix of the predicted sequence using model {{model_name}}. <br>
+						The higher the probability, the larger is the size of the letter. <br> <br>
+					</span>
+					{% for item in image_names %}
+						<img src="{% static '/pred_result/images/' %}{{item}}" alt="logo_1" />
+					{% endfor %}
+			</div>
+			<div class="footer">
+			
+			<p style="letter-spacing:0.1em;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;">COPYRIGHT 2021 FSU STATISTICS DEPARTMENT</p>
+			
+			<p style="letter-spacing:0.1em;margin-top:2%;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;"> <a style="color:white" href="https://ani.stat.fsu.edu/~jinfeng/"> J Zhang Computational Biology and Bioinformatics Lab </a></p>
+
 		</div>
+		</div>
+
+		
 
 		<!-- <h2>Probability Matrix Images </h2>
 		The following images depicts the probability matrix of the predicted sequence using model {{model_name}}. <br>
@@ -231,10 +253,10 @@
 		 -->
 		<!--
 		
-		<img src="{% static 'result/1ete-original.pdb_1_logo.png' %}" alt="logo_1" />
-		<img src="{% static 'result/1ete-original.pdb_2_logo.png' %}" alt="logo_2" />
-		<img src="{% static 'result/1ete-original.pdb_3_logo.png' %}" alt="logo_3" />
-		<img src="{% static 'result/1ete-original.pdb_4_logo.png' %}" alt="logo_4" />
+		<img src="{% static 'images/1ete-original.pdb_1_logo.png' %}" alt="logo_1" />
+		<img src="{% static 'images/1ete-original.pdb_2_logo.png' %}" alt="logo_2" />
+		<img src="{% static 'images/1ete-original.pdb_3_logo.png' %}" alt="logo_3" />
+		<img src="{% static 'images/1ete-original.pdb_4_logo.png' %}" alt="logo_4" />
 		-->
 		
 		<!-- For typical button view, included the CSS style "GCG" above-->

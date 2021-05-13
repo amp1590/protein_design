@@ -53,29 +53,48 @@
 				background-color: #E8E8E8;
 			color: black;
 			}
+			.prefooter {
+				position:relative;
+				top:30%;
+				background-color:#F2F2F2;
+				width:100%;
+				height:8%;
+			}
+
+			.footer {
+				position:relative;
+				margin-top:10%;
+				background-color:#202020;
+				width:76%;
+				height:12%;
+				padding-left:12%;
+				padding-right:12%;
+				padding-top:3%;
+				padding-bottom:3%;
+			}
 		</style>
 		
 		<div class="topnav">
 			<style>
-			ul{
+			.ul1 {
 				list-style-type:none;
 				margin: 0;
 				padding: 0;	
 			}
-			li {
+			.li1 {
 				display: inline;
 			}
 			</style>
 
-			<ul style="margin-right:200px">
-			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
-			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
-			<li><a class="active" href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
-			<li><a href="http://127.0.0.1:8000/demo/">DEMO</a></li>
-			<li><a href="http://127.0.0.1:8000/get_sequence/">SEARCH</a></li>
-			<li><a href="http://127.0.0.1:8000/">HOME</a></li>
+			<ul class="ul1" 	style="margin-right:200px">
+			<li class="li1" style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
+			<li class="li1" ><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+			<li class="li1" ><a class="active" href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
+			<li class="li1" ><a href="http://127.0.0.1:8000/demo/">DEMO</a></li>
+			<li class="li1" ><a href="http://127.0.0.1:8000/get_sequence/">PROTEIN DESIGN</a></li>
+			<li class="li1" ><a href="http://127.0.0.1:8000/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProdCoNN 1.0</h></li>
+			<li class="li1"  style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		
@@ -91,12 +110,26 @@
 
 		<div style="width:1130px;height:300px;background-color:#f5f5f5;margin:auto;margin-top:50px;">
 			<header style="position:relative;top:40px;left:40px;font-family:'Proxima Nova', sans-serif;font-size:26px;"><b>References</b></header>
-			<p>
-				<span style="position:relative;top:40px;left:40px;line-height:27px;"> [Our paper on the basis of which this server was built] <br>
-Zhang Y, Chen Y, Wang C, et al. ProDCoNN: Protein design using a convolutional neural network. Proteins. 2020;1–11. <a href="https://pubmed.ncbi.nlm.nih.gov/31867753/"> [Pubmed] </a></span>
+			
+			<ul style="margin-top:50px;margin-left:20px;">
+				<li>Zhang Y, Chen Y, Wang C, et al. ProDCoNN: Protein design using a convolutional neural network. Proteins. 2020;1–11. <a href="https://pubmed.ncbi.nlm.nih.gov/31867753/"> [Pubmed] </a></span>
+				<br>[Our paper on the basis of which this server was built] 
+				</li>
+			</ul>
 
-			</p>
+			
 		</div>
+
+		<div class="prefooter">
+		</div>
+		<div class="footer">
+			
+			<p style="letter-spacing:0.1em;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;">COPYRIGHT 2021 FSU STATISTICS DEPARTMENT</p>
+			
+			<p style="letter-spacing:0.1em;margin-top:2%;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;"> <a style="color:white" href="https://ani.stat.fsu.edu/~jinfeng/"> J Zhang Computational Biology and Bioinformatics Lab </a></p>
+
+		</div>
+
 		
 	</body>
 
