@@ -6,7 +6,7 @@
 # Call model for prediction
 
 import sys
-import os #I added
+import os, glob #I added
 import numpy as np
 import copy
 from .prediction_functions import *      # 05/29/2019 Yang: import functions for data preprocessing and prediction
@@ -45,7 +45,7 @@ def read_pdb(file_name, target_chain):       # skip alternate position version
                     break
             if a[0:3]=='TER':
                 continue
-            if a[21] == target_chain.upper():   # only keep target chain
+            if target_chain == 'all' or a[21] == target_chain.upper():   # By Yuan (05/11/2021)keep all the chains or only keep target chain
                 count+=1
                 x = [a[12:16].strip(),a[16],a[17:20].strip(),a[22:27].strip(),[float(a[30:38]),float(a[38:46]),float(a[46:54])]]
                 if count == 0:  # first row of pdb file
@@ -298,6 +298,9 @@ def main(pdbfile, target_chain, target_res, mode, pdb_file_name):
 #    pdbfile= '3gfs.pdb'
 #    target_chain= 'A'
 #    target_res= '1,-1'
+
+    if(target_chain.isalpha()==0):
+        target_chain="all"
     
     if (mode != 'BBO') & (mode != 'BBS'):
         mode = 'BBO'
@@ -305,6 +308,7 @@ def main(pdbfile, target_chain, target_res, mode, pdb_file_name):
     #if (model != '30') & (model != '90'):
     #   model = '90'
     model='90'
+
         
     
     
@@ -390,12 +394,15 @@ def main(pdbfile, target_chain, target_res, mode, pdb_file_name):
     else:
         BBO_figure(prediction_prob, pdb_file_name+'_logo.png')
 
-
+    
     #To make a list of all the image names to render it to the template from view
     files = os.listdir(dir)
     image_names=[]
     for f in files:
+        print(f)
         image_names.append(f)
+
+    sorted(image_names, key=str.lower)
 
     #return output_seq, output_prob, image_names
     return original_seq, predicted_seq, output_prob, image_names
