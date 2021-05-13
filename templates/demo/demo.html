@@ -81,7 +81,27 @@
 				top:32%;
 				left:13%;
 			}
-        /* } */
+			
+			.prefooter {
+				position:relative;
+				top:30%;
+				background-color:#F2F2F2;
+				width:100%;
+				height:8%;
+			}
+
+			.footer {
+				position:relative;
+				top:30%;
+				background-color:#202020;
+				width:76%;
+				height:12%;
+				padding-left:12%;
+				padding-right:12%;
+				padding-top:3%;
+				padding-bottom:3%;
+			}
+        
     	</style> 
 		<title> demo </title>
 	
@@ -103,26 +123,28 @@
 
 			<ul style="margin-right:200px">
 			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+			<li><a href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
             <li><a class="active" href="http://127.0.0.1:8000/demo/">DEMO</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
+			<li><a href="http://127.0.0.1:8000/get_sequence/">PROTEIN DESIGN</a></li>
+			<li><a href="http://127.0.0.1:8000/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProdCoNN 1.0</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		<div style="height:1px;background-color:#979797;"></div>
+		
 		<div class="container">
             <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
                 src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
-            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">DEMOS</h></div>
+            <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">DEMO</h></div>
         </div>
-	`	
-		<div style="width:100%; margin-top:4%;margin-left:13%;">
-			<div style="width:73%;height:350px;background-color:#f5f5f5;">
+		
+		
+		<div style="width:87%;margin-top:4%;margin-left:13%;">
+			<div style="width:84%;height:350px;background-color:#f5f5f5;">
 					<div style="height:60px;background-color:#6b6696">
-						<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>NOTE</b></header>
+						<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;padding-left:40px;padding-top:17px;"><b>NOTE</b></header>
 					</div>
 					<div style="position:relative;left:5%;top:10%;width:90%">
 					<p style="margin-left:20px;color:rgb(92, 92, 92);">
@@ -139,45 +161,57 @@
 
 			</div>
 			<br><br>
-			<div style="width:73%;height:60px;background-color:#f5f5f5;">
+			<div style="width:84%;height:60px;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
-                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>DEMO 1 - Model BBO Results</b></header>
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;padding-left:40px;padding-top:17px;"><b>DEMO 1 - Model BBO Results</b></header>
                 </div>
 			</div>
 			<br>
-			<img style="margin-left:2%;" src="{% static '/demo/BBO.PNG' %}" alt="BBO image" />
+			<img style="margin-left:2%;width:80%;" src="{% static '/demo/BBO.PNG' %}" alt="BBO image" />
 			<br>
 			<br>
-			<div style="width:73%;height:60px;background-color:#f5f5f5;">
+			<div style="width:84%;height:60px;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>DEMO 2 - Model BBS Results</b></header>
                 </div>
 			</div>
 			<br>
-			<img style="margin-left:2%;" src="{% static '/demo/BBS.PNG' %}" alt="BBO image" />
+			<img style="margin-left:2%;width:80%;" src="{% static '/demo/BBS.PNG' %}" alt="BBO image" />
 			<br>
 			<br>
-			<div style="width:73%;height:300px;background-color:#f5f5f5;">
+			<div style="width:84%;height:55rem;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>DEMO 3 - Downloaded/Emailed Results</b></header>
                 </div>
 				<div style="position:relative;left:5%;top:2%;width:90%">
-				<p style="margin-left:20px;color:rgb(92, 92, 92);">
+				<p style="margin-left:20px;color:#333333;">
 						In the result page, user can download the result in the form of a .txt file. The same file is also sent to the user via email. <br>
 						<br> 
-						Column 1:    Sequence from the input pdb file <br>
-						Column 2:    Predicted sequence <br>
-						Column 3-22: Predicted probability of each amino acid <br>
+						Column 1 <span style="margin-left:31px;">:</span> <span style="margin-left:9px;"> Sequence from the input pdb file<span> <br>
+						Column 2 <span style="margin-left:27px;">:</span> <span style="margin-left:9px;"> Predicted sequence <br>
+						Column 3-22&nbsp;&nbsp;: &nbsp; Predicted probability of each amino acid <br>
 						<br> <br>
 						Here is a partial screenshot of what the downloaded/emailed file looks like. <br> <br>
 					</p>
+					<img style="margin-left:2%;width:96%;" src="{% static '/demo/result.PNG' %}" alt="BBO image" />
 					</div>
 			</div>
 			<br>
-			<img style="margin-left:2%;" src="{% static '/demo/result.PNG' %}" alt="BBO image" />
+			<br>
+			<br>
+		</div>
 
+		<div class="prefooter">
+		</div>
+		<div class="footer">
+			
+			<p style="letter-spacing:0.1em;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;">COPYRIGHT 2021 FSU STATISTICS DEPARTMENT</p>
+			
+			<p style="letter-spacing:0.1em;margin-top:2%;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;"> <a style="color:white" href="https://ani.stat.fsu.edu/~jinfeng/"> J Zhang Computational Biology and Bioinformatics Lab </a></p>
 
 		</div>
+
+
 	    {% comment %} <h1> Demos </h1>
 
 	    For all the demos presented here, the following field values were assumed constant: <br>

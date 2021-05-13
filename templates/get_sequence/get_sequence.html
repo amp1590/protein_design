@@ -89,6 +89,26 @@
 				color:white;;
 				background-color:#3C3775;
 			}
+
+            .prefooter {
+				position:relative;
+				top:30%;
+				background-color:#F2F2F2;
+				width:100%;
+				height:8%;
+			}
+
+			.footer {
+				position:relative;
+				margin-top:10%;
+				background-color:#202020;
+				width:76%;
+				height:12%;
+				padding-left:12%;
+				padding-right:12%;
+				padding-top:3%;
+				padding-bottom:3%;
+			}
 		</style>
 		
 		<div class="topnav">
@@ -105,17 +125,17 @@
 
 			<ul style="margin-right:200px">
 			<li style="width:100px;height:20px;background-color:#FFFFFF">&nbsp; </li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_contact_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=5t7DkNuBOniamvrcOgnWxb9lY-DUEEO-hi-uxujAhkU&amp;e=">CONTACT</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_refer-5Fpage&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=-NSEkIbvb5z4MWB4EvxbceBjeofJcqK5i5ZgRAlUfac&amp;e=">REFERENCES</a></li>
+			<li><a href="http://127.0.0.1:8000/contact/">CONTACT</a></li>
+			<li><a href="http://127.0.0.1:8000/refer_page">REFERENCES</a></li>
             <li><a href="http://127.0.0.1:8000/demo/">DEMO</a></li>
-			<li><a class="active" href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_get-5Fsequence_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=T-GHRkMidT91_htyReGWFwGrPEmZKhmGRq7wDRZ3Nec&amp;e=">SEARCH</a></li>
-			<li><a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__127.0.0.1-3A8000_home_&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=xK13MD8NMBcmxVgSye2bA-Bkkp6LiaP0wP8idgk3r_I&amp;e=">HOME</a></li>
+			<li><a class="active" href="http://127.0.0.1:8000/get_sequence/">PROTEIN DESIGN</a></li>
+			<li><a href="http://127.0.0.1:8000/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProdCoNN 1.0</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
-		
 		<div style="height:1px;background-color:#979797;"></div>
+        
         <div class="container">
             <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
                 src="{% static 'background_img/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
@@ -123,11 +143,11 @@
         </div>
 
 
-        <div style="width:100%;float:left;margin-left:13%;margin-top:50px;padding-top:2%;">  
+        <div style="width:100%;float:left;;margin-top:4%;">  
         
         <form enctype="multipart/form-data" action="" method="post">
             {% csrf_token %}
-            <div style="height:240px;width:73%;background-color:#f5f5f5">
+            <div style="margin-left:13%;height:240px;width:73%;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>UPLOAD FILE</b></header>
                 </div>
@@ -138,7 +158,7 @@
                     <br>
                     <br>
                     <br>
-                    <span style="position:relative;top:4%;color:rgb(92, 92, 92);" >The pdb file should follow the <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__www.wwpdb.org_documentation_file-2Dformat-2Dcontent_format33_sect9.html-23ATOM&amp;d=DwMGAg&amp;c=sJ6xIWYx-zLMB3EPkvcnVg&amp;r=xTTB8E43Cp37iAhLSz0Fbw&amp;m=ZpBdGp6kpxcs0mv5Xn4rjYHmsSAG4qGIjXOMCr6bnKY&amp;s=s4BMxyiB4LJPkxigb1cMiApnBtaFqTUm0dkX_9sMA3E&amp;e=">standard pdb file format</a></span>
+                    <span style="position:relative;top:4%;color:rgb(92, 92, 92);" >The pdb file should follow the <a href="https://www.wwpdb.org/documentation/file-format-content/format33/sect9.html#ATOM">standard pdb file format</a></span>
                 </p>
             </div>
             <br>
@@ -191,7 +211,7 @@
             
             {% comment %} <br>
             <div style="margin-top:350px"></div> {% endcomment %}
-            <div style="width:73%;height:300px;background-color:#f5f5f5;">
+            <div style="margin-left:13%;width:73%;height:300px;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>FILTERS</b></header>
                 </div>
@@ -230,7 +250,7 @@
             <br>
             <br>
 
-            <div style="width:73%;height:300px;background-color:#f5f5f5">
+            <div style="margin-left:13%;width:73%;height:260px;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>MODEL SETTINGS</b></header>
                 </div>
@@ -239,7 +259,7 @@
                     <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.model_name}}</span> <br>
                      <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">
-                    BBO: Backbone Only model <br>
+                    BBO: Backbone Only model <br><br>
                     BBS: Backbone with Sequence model <br> </span>
 
                 </p>
@@ -247,7 +267,7 @@
             </div>
             <br>
             <br>
-            <div style="width:73%;height:240px;background-color:#f5f5f5">
+            <div style="margin-left:13%;width:73%;height:240px;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
                     <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>EMAIL RESULTS</b></header>
                 </div>
@@ -265,6 +285,17 @@
                 <input class="button" type="submit" value="SUBMIT">
             </div>
         </form>
+
+        
+		<div class="footer">
+			
+			<p style="letter-spacing:0.1em;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;">COPYRIGHT 2021 FSU STATISTICS DEPARTMENT</p>
+			
+			<p style="letter-spacing:0.1em;margin-top:2%;font-family:'Proxima Nova', sans-serif;color:#FFFFFF;font-size:12px;"> <a style="color:white" href="https://ani.stat.fsu.edu/~jinfeng/"> J Zhang Computational Biology and Bioinformatics Lab </a></p>
+
+		</div>
+
        </div>
+       
     </body>
 </html>
