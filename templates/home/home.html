@@ -233,7 +233,7 @@
 			
 			<div style="position:relative;top:-5%;left:26%;height:2px;width:80px;background-color:#000000"></div>
 
-			<a href= "http://127.0.0.1:8000/get_sequence/">
+			<a href= "/get_sequence">
 				<button class = "button">TRY IT NOW</button>
 				
 			</a>
@@ -251,18 +251,18 @@
 			<div class="row">
 				<div style="padding-top:4.2%;padding-left:12%;padding-right:2%;" class="column3">
 					<h style="letter-spacing:1px;font-family:'Proxima Nova', sans-serif;font-size:36;color:#525188"><b>ProDCoNN 1.0</b></h>
-					<p style="letter-spacing:0.5px;width:75%;line-height:24px;font-family:'Proxima Nova', sans-serif;font-size:18px;color:black">A web-based tool for real-time protein sequence prediction and analysis. Trained on a very large number of protein structures, the method called ProDCoNN (protein design with CNN), achieved state-of-the-art performance when tested on large numbers of test proteins and benchmark datasets. Applying a nine-layer 3D deep convolutional neural network (CNN), the server predicts the residue type given the 3D structural environment around the Cα atom of a residue, which is repeated for each residue of a protein. All protein structures(input) follow the Protein Data Bank (PDB) standard format.
-
-				The server also serves the information about each residue's probability at a given position and visible images depicting the overall probability matrix for the user's convenience.</p>
+					<p style="letter-spacing:0.5px;width:75%;line-height:24px;font-family:'Proxima Nova', sans-serif;font-size:18px;color:black">
+					A web-based tool for protein design from given three-dimensional structures. ProDCoNN was trained using a very large number of protein structures and achieved state-of-the-art performance when tested on a large number of test proteins and benchmark datasets. ProDCoNN predicts the residue types for a given backbone structure without sequence information, which is also called reverse protein folding. It can also predict a single residue type with sequence information for the rest of the proteins, which is also known as single residue mutation prediction. All input protein structures should follow the Protein Data Bank (PDB) standard format. In addition to residue types, the server also outputs each residue's probability at a given position and images depicting the overall probability matrix for users to conveniently visualize the results.
+					</p>
 				</div>
 				<div style="height:90%;padding-top:5%;padding-left:4.5%;padding-right:1.5%;background-color:#525188" class="column2">
 					<h style="font-family:'Proxima Nova', sans-serif;font-size:24px;color:#FFF5BF;margin-left:-3%;"><b>LATEST UPDATES</b></h>
 					<ul style="margin-left:-10%;height:fit-content;width:85%;letter-spacing:0.5px;line-height:22px;font-family:'Proxima Nova',sans-serif;font-size:16px;font-weight:lighter;color:#FFFFFF">
 						<li>
-							<b>Results via Email:</b> The feature for sending the results via user email has been added.
+							<b>Results via Email:</b> The feature for sending the results via user emails has been added.
 						</li>
 						<li>
-							<b>Demo Page:</b> A demo page has been introduced for the convenience of all kind of users to visualize what they will get out of this server even before submitting any query.
+							<b>Demo Page:</b> A demo page has been introduced for users to learn the usage of the server and visualize what they will get out of this server even before submitting any queries.
 						</li>
 					</ul>
 				</div>
