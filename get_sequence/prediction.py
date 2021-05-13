@@ -247,22 +247,24 @@ def reform(v, top, c=0.0):
     result = [x if x>=flag else 0.0 for x in v]
     return result
 
-def LOGO(Probability, figure_name, xi_ind=1, top_rank=20, figsize=(10, 2.5)):
+def LOGO(Probability, figure_name, max_x_tick, xi_ind=1, top_rank=20, figsize=(10, 2.5)):   # function updated by Yuan, 05/12/2021
     AA_1 = ['A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y']
     P1 = [reform(x[0],top_rank) for x in Probability]
     df = pd.DataFrame(data=P1, columns=AA_1)
     ww_logo = logomaker.Logo(df,color_scheme='skylign_protein',vpad=.1,width=.8,fade_probabilities=False, figsize=figsize)
     ww_logo.ax.set_xlim([-1, len(df)])
     #ww_logo.style_xticks(anchor=0, spacing=2)#, rotation=45)
-    ww_logo.ax.set_xticks(range(0, len(df), 2))
-    ww_logo.ax.set_xticklabels(range (xi_ind,len(df)+xi_ind,2))
+    ww_logo.ax.set_xticks(range(0, max_x_tick, 2))  # function updated by Yuan, 05/12/2021
+    ww_logo.ax.set_xticklabels(range (xi_ind,max_x_tick+xi_ind,2)) # function updated by Yuan, 05/12/2021
+    #ww_logo.ax.set_xticks(range(0, len(df), 2))
+    #ww_logo.ax.set_xticklabels(range (xi_ind,len(df)+xi_ind,2))
     ww_logo.ax.set_yticks([0, 0.5, 1.0])
     ww_logo.ax.set_ylabel('probability')
-    ww_logo.fig.savefig('./pred_result/static/pred_result/images/' + figure_name) #setting relative path
+    ww_logo.fig.savefig('./pred_result/static/pred_result/images/' + figure_name) #setting relative path #added by arunima 05.13.2021
     plt.clf()
     plt.cla()
 
-def BBO_figure(Probability, figure_name):
+def BBS_figure(Probability, figure_name):
     AA_1 = ['A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y']
     plt.figure(figsize=(10,3))
     x = [i-0.5 for i in range (20)]
@@ -376,7 +378,7 @@ def main(pdbfile, target_chain, target_res, mode, pdb_file_name):
     #    for item in prediction:
     #        f.write("%s\n" % item)
     #f.close()
-    
+
     # output Logo
     xtick_len = 40
     if mode.startswith('BBO'):
@@ -384,17 +386,14 @@ def main(pdbfile, target_chain, target_res, mode, pdb_file_name):
         for i in range (num_fig):
             if i == num_fig-1:
                 Pred_prob = prediction_prob[i*xtick_len:]
-                fig_p = len(prediction_prob)%xtick_len/float(xtick_len)
-                LOGO(Pred_prob, pdb_file_name+'_'+str(i+1)+'_logo.png', xi_ind=i*xtick_len+1, top_rank=6, figsize=(10*fig_p+1, 2.5))
-                # eps format will not show the fade effection
             else:
                 Pred_prob = prediction_prob[i*xtick_len : (i+1)*xtick_len]
-                LOGO(Pred_prob, pdb_file_name+'_'+str(i+1)+'_logo.png', xi_ind=i*xtick_len+1, top_rank=6, figsize=(10, 2.5))
-    
-    else:
-        BBO_figure(prediction_prob, pdb_file_name+'_logo.png')
+            LOGO(Pred_prob, pdb_file_name+'_'+str(i+1)+'_logo.png', xtick_len, xi_ind=i*xtick_len+1, top_rank=6, figsize=(10, 2.5)) # updated by Yuan, 05/12/2021
 
+    else:
+        BBS_figure(prediction_prob, pdb_file_name+'_logo.png') # function updated by Yuan, 05/12/2021
     
+ 
     #To make a list of all the image names to render it to the template from view
     files = os.listdir(dir)
     image_names=[]

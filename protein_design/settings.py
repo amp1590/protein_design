@@ -31,7 +31,7 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mars.stat.fsu.edu', '128.186.4.124', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['prodconn.stat.fsu.edu', 'mars.stat.fsu.edu', '128.186.4.124', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -144,12 +144,12 @@ MEDIA_URL = '/media/'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 SECURE_SSL_REDIRECT = True
-
+"""
 #HSTS settings (for security issues in production)
 SECURE_HSTS_SECONDS = 31536000 # 1 year
 SECURE_HSTS_PRELOAD = True
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-"""
+
 
 #Email settings
 ''' #Testing purpose - didn't work on cmd
