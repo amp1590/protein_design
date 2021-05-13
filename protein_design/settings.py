@@ -23,7 +23,10 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static') #added this manually
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(%0l4vm&i@nblmnebzn381ard_hp2^4_s*if0d00k8mg*%tz83'
+#SECRET_KEY = ''
+#for security issues in production:
+with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -135,6 +138,18 @@ STATICFILES_DIR = [STATIC_DIR,]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #added this manually #Here 'media' could be any string, 
 #that string will be in thr url path. The 'media' in url does not means the directory media, it corresponds to this string name here.
 MEDIA_URL = '/media/'
+
+"""
+#HTTPS settings (for security issues in production)
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
+
+#HSTS settings (for security issues in production)
+SECURE_HSTS_SECONDS = 31536000 # 1 year
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+"""
 
 #Email settings
 ''' #Testing purpose - didn't work on cmd
