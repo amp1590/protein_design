@@ -29,7 +29,7 @@ with open(os.path.join(BASE_DIR, 'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['prodconn.stat.fsu.edu', 'mars.stat.fsu.edu', '128.186.4.124', 'localhost', '127.0.0.1']
 
