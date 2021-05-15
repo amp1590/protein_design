@@ -6,7 +6,8 @@
 		<meta charset = "UTF-8">
 		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
 		<title> Sequence Prediction </title>
-	
+        <link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Proxima+Nova|Montserrat">
 	</head>
 
     <body style=background-color:#FFFFFF;>
@@ -131,14 +132,14 @@
 			<li><a class="active" href="/get_sequence">PROTEIN DESIGN</a></li>
 			<li><a href="/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h style="font-weight:bold;">ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		<div style="height:1px;background-color:#979797;"></div>
         
         <div class="container">
-            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
-                src="{% static '/get_sequence/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
+            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px;width:1900px;"
+                src="{% static '/get_sequence/protein_header.png' %}" alt="header_pic_2"/>
             <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">PROTEIN DESIGN</h></div>
         </div>
 
@@ -149,7 +150,7 @@
             {% csrf_token %}
             <div style="margin-left:13%;height:240px;width:73%;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
-                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>UPLOAD FILE</b></header>
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;padding-left:40px;padding-top:17px;"><b>UPLOAD FILE</b></header>
                 </div>
                 <p style="position:relative;left:4%;top:10%;">
                     <span style="letter-spacing:1px;font-size:18px;color:black;"><b>{{form.pdb_file.label_tag}}</b></span>
@@ -211,28 +212,31 @@
             
             {% comment %} <br>
             <div style="margin-top:350px"></div> {% endcomment %}
-            <div style="margin-left:13%;width:73%;height:300px;background-color:#f5f5f5;">
+            <div style="margin-left:13%;width:73%;padding-bottom:2%;background-color:#f5f5f5;">
                 <div style="height:60px;background-color:#3C3775">
-                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>FILTERS</b></header>
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;padding-left:40px;padding-top:17px;"><b>FILTERS</b></header>
                 </div>
                 <p>
-                    <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.chain_name.label_tag}}</b></span>
-                    <span style="position:relative;top:22px;left:4%;">{{form.chain_name}}</span>
-                    <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">
+                    <br>
+                    <span style="position:relative;left:4%;font-size:18px;color:black;"><b>{{form.chain_name.label_tag}}</b></span>
+                    <span style="position:relative;left:4%;">{{form.chain_name}}</span>
+                    <span style="position:relative;left:4%;color:rgb(92, 92, 92);">
+                    <br>
                     <br>The input should be a single alphabet. 
                     <br>This field is optional when "Model Type" is "BBO". When the field is empty, all chains of the input file would be considered.
                     <br>This field is required when "Model Type" is "BBS". 
                     </span>
                 </p>
                 <br>
-                <p>
-                    <span style="position:relative;top:35px;left:4%;font-size:18px;color:black;"><b>{{form.prediction_begin_range.label_tag}}</b></span>
-                    <span style="position:relative;top:35px;left:4%;">{{form.prediction_begin_range}}</span>
-                    <span style="position:relative;top:35px;left:4%;font-size:18px;color:black;margin-left:80px;"><b>{{form.prediction_end_range.label_tag}}</b></span>
-                    <span style="position:relative;top:35px;left:4%;">{{form.prediction_end_range}}</span>
+                <p style="padding-left:4%">
+                    <span style="font-size:18px;color:black;"><b>{{form.prediction_begin_range.label_tag}}</b></span>
+                    <span >{{form.prediction_begin_range}}</span>
+                    <span style="font-size:18px;color:black;margin-left:80px;"><b>{{form.prediction_end_range.label_tag}}</b></span>
+                    <span >{{form.prediction_end_range}}</span>
                     <!--{{form.prediction_end_range.help_text}} -->
                     <br>
-                    <span style="position:relative;top:70px;left:4%;color:rgb(92, 92, 92);">In case of predicting through the whole chain, use [1,-1]</span>
+                    <br>
+                    <span style="color:rgb(92, 92, 92);">In case of predicting through the whole chain, use [1,-1]</span>
                 </p>
 
             </div>
@@ -250,16 +254,17 @@
             <br>
             <br>
 
-            <div style="margin-left:13%;width:73%;height:260px;background-color:#f5f5f5">
+            <div style="margin-left:13%;width:73%;padding-bottom:2%;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
-                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>MODEL SETTINGS</b></header>
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;padding-left:40px;padding-top:17px;"><b>MODEL SETTINGS</b></header>
                 </div>
 
-                <p>
-                    <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
-                    <span style="position:relative;top:22px;left:4%;">{{form.model_name}}</span> <br>
-                     <span style="position:relative;top:50px;left:4%;color:rgb(92, 92, 92);">
-                    BBO: Backbone Only model <br><br>
+                <p style="padding-left:4%">
+                    <br>
+                    <span style="font-size:18px;color:black;"><b>{{form.model_name.label_tag}}</b></span>
+                    <span>{{form.model_name}}</span> <br><br>
+                    <span style="color:rgb(92, 92, 92);">
+                    BBO: Backbone Only model <br>
                     BBS: Backbone with Sequence model <br> </span>
 
                 </p>
@@ -269,9 +274,9 @@
             <br>
             <div style="margin-left:13%;width:73%;height:240px;background-color:#f5f5f5">
                 <div style="height:60px;background-color:#3C3775">
-                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>EMAIL RESULTS</b></header>
+                    <header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;padding-left:40px;padding-top:17px;"><b>EMAIL RESULTS</b></header>
                 </div>
-                <p>
+                <p  >
                     <span style="position:relative;top:22px;left:4%;font-size:18px;color:black;"><b>{{form.recipient.label_tag}}</b></span>
                     <span style="position:relative;top:22px;left:4%;">{{form.recipient}}</span>
                     <br>
