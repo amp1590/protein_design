@@ -6,6 +6,8 @@
 	<head>
 		<meta charset = "UTF-8">
 		<meta name='viewport' content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Proxima+Nova|Montserrat">
 		
 		<!--
 		<style> body {
@@ -152,14 +154,14 @@
 			<li><a class="active" href="/get_sequence">PROTEIN DESIGN</a></li>
 			<li><a href="/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
+			<li style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h style="font-weight:bold;">ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		<div style="height:1px;background-color:#979797;"></div>
 
         <div class="container">
-            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px"
-                src="{% static '/pred_result/header_3.png' %}" alt="header_pic_2"style="width:100%;height:200px;" />
+            <img style="object-fit:cover;max-width:100%;overflow:hidden;height:200px;width:1900px;"
+                src="{% static '/get_sequence/protein_header.png' %}" alt="header_pic_2" />
             <div class="cheader1"><h style="text-align:'left';font-family:'Proxima Nova',san-serif;font-size:40px;color:#FFFFFF;">RESULTS</h></div>
         </div>
 
@@ -179,10 +181,10 @@
 				</div>	
 
 			<div id="Sequences" class="tabcontent container">
-				<h style=";font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">INPUT:</h>
-				<p style="width:84%;font-family:'Courier New';word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:3%;padding-left:4%;padding-right:4%;"><b>{{original_seq}}</b></p>
-				<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">PREDICTED:</h>
-				<p style="width:84%;font-family:'Courier New';word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:5%;padding-left:4%;padding-right:4%;"><b>{{predicted_seq}}</b></p> 
+					<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">INPUT:</h>
+					<p style="width:84%;font-family:'Courier New';word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:3%;padding-left:4%;padding-right:4%;"><b>{{original_seq}}</b></p>
+					<h style="font-size:18px;font-family:'Montserrat';margin-left:20px;margin-top:20px;padding-top:20px;">PREDICTED:</h>
+					<p style="width:84%;font-family:'Courier New';word-wrap:break-word;margin:auto;padding-top:2%;padding-bottom:5%;padding-left:4%;padding-right:4%;"><b>{{predicted_seq}}</b></p> 
 			</div>
 
 			<div id="Input" class="tabcontent">
@@ -218,7 +220,7 @@
 				<div style="height:60px;background-color:#3C3775">
 					<header style="letter-spacing:1px;font-family:'Proxima-Nova',sans-serif;font-size:22px;color:#FFFFFF;margin-left:4%;padding-top:1.6%;"><b>PROBABILITY MATRIX</b></header>
 				</div>
-				<div style="margin:auto;width:;height:5%;text-align:center;">
+				<div style="margin:auto;height:5%;text-align:center;">
 				<header style="margin:auto;margin-top:3%;font-family:'Montserrat';font-size:14px;margin-bottom:20px;">DOWNLOAD THE PREDICTED SEQUENCE WITH PROBABILITY MATRIX:</header>
 				<a href="{% url 'download_pred_prob' %}">
 						<button class="gfg2">DOWNLOAD</button>

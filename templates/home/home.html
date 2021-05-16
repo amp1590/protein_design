@@ -9,6 +9,9 @@
 								background-color: slateblue;
 							} </style>
 							-->
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css?family=Proxima+Nova|Montserrat">
+			
 		<style>
 			.parallax {
 				background-color:#D2C6A7;
@@ -62,10 +65,11 @@
 				cursor: pointer;
 				border-radius: 40px;
 				text-align: center;
-				font-family:"Montserrat";
+				font-family:'Montserrat';
 				box-shadow: inset 0 0 0 0 #ff0000;
 				transition:ease-out 0.3s;
 				outline: none;
+				
 			}
 
 			.button:hover {
@@ -217,7 +221,7 @@
 			<li class="li1" ><a href="/get_sequence">PROTEIN DESIGN</a></li>
 			<li class="li1" ><a class="active" href="/">HOME</a></li>
 			<!-- <li	style="position:absolute;left:200px"><a href="http://127.0.0.1:8000/home/"><button class="logobutton">PROTEIN SEQUENCING</button></a></li> -->
-			<li class="li1"  style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px" ><h>ProDCoNN 1.0</h></li>
+			<li class="li1"  style ="font-family:'Montserrat','Proxima Nova',sans-serif;font-size:20px;float:left;margin-left:200px;margin-top:13px;font-weight:bold;" ><h style="font-weight:bold;">ProDCoNN 1.0</h></li>
 		  	</ul>
 		</div>
 		<div style="height:1px;background-color:#979797;"></div>	
@@ -228,13 +232,13 @@
 				<p style="text-align:left;padding-left:20%;font-family:'Pangram', sans-serif; font-size:40px;color:#000000;">Protein Sequence Design from 3D Protein Structures</h>
 			</div>
 			<div style="margin-left:10%;position:relative;top:-10%;width:100%;">
-				<p style="color:#555555;text-align:left;padding-left:16%;font-family:'Proxima Nova',sans-serif;letter-spacing:1px;font-size:18px;">can we please figure out something to write here</p>
+				<p style="color:#555555;text-align:left;padding-left:16%;font-family:'Proxima Nova',sans-serif;letter-spacing:1px;font-size:18px;">temporary placeholder text for more detailed descriptors</p>
 			</div>
 			
 			<div style="position:relative;top:-5%;left:26%;height:2px;width:80px;background-color:#000000"></div>
 
 			<a href= "/get_sequence">
-				<button class = "button">TRY IT NOW</button>
+				<button style="font-weight:bold;" class = "button">TRY IT NOW</button>
 				
 			</a>
 
@@ -250,13 +254,13 @@
 
 			<div class="row">
 				<div style="padding-top:4.2%;padding-left:12%;padding-right:2%;" class="column3">
-					<h style="letter-spacing:1px;font-family:'Proxima Nova', sans-serif;font-size:36;color:#525188"><b>ProDCoNN 1.0</b></h>
+					<h style="letter-spacing:1px;font-family:'Proxima Nova', sans-serif;font-size:36;color:#525188;"><b>ProDCoNN 1.0</b></h>
 					<p style="letter-spacing:0.5px;width:75%;line-height:24px;font-family:'Proxima Nova', sans-serif;font-size:18px;color:black">
 					ProDCoNN is a web-based tool for protein design from given three-dimensional structures. It was trained using a very large number of protein structures and achieved state-of-the-art performance when tested on a large number of test proteins and benchmark datasets. ProDCoNN predicts the residue types for a given backbone structure without sequence information, which is also called reverse protein folding. It can also predict a single residue type with sequence information for the rest of the proteins, which is also known as single residue mutation prediction. All input protein structures should follow the Protein Data Bank (PDB) standard format. In addition to residue types, the server also outputs each residue's probability at a given position and images depicting the overall probability matrix for users to conveniently visualize the results.
 					</p>
 				</div>
 				<div style="height:90%;padding-top:5%;padding-left:4.5%;padding-right:1.5%;background-color:#525188" class="column2">
-					<h style="font-family:'Proxima Nova', sans-serif;font-size:24px;color:#FFF5BF;margin-left:-3%;"><b>LATEST UPDATES</b></h>
+					<h style="letter-spacing:1px;font-family:'Proxima Nova', sans-serif;font-size:24px;color:#FFF5BF;margin-left:-3%;"><b>LATEST UPDATES</b></h>
 					<ul style="margin-left:-10%;height:fit-content;width:85%;letter-spacing:0.5px;line-height:22px;font-family:'Proxima Nova',sans-serif;font-size:16px;font-weight:lighter;color:#FFFFFF">
 						<li>
 							<b>Results via Email:</b> The feature for sending the results via user emails has been added.
