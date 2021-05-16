@@ -113,6 +113,7 @@ def get_sequence(request):
     return render(request, 'get_sequence/get_sequence.html', {'form': form,})
 
 
+
 def download_pred_prob(request):
     output = pass_val_prob() #Calling pass_val_prob() function which was declared & defined in get_squence view
     filename = "prediction_probability.txt"
@@ -120,6 +121,8 @@ def download_pred_prob(request):
     response = HttpResponse(file_data, content_type='/application/text')
     response['Content-Disposition'] = 'attachment; filename={0}'.format(filename)
     return response
+
+
 
     
 #Example ContactForm for future reference

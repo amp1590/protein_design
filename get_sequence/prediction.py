@@ -260,7 +260,7 @@ def LOGO(Probability, figure_name, max_x_tick, xi_ind=1, top_rank=20, figsize=(1
     #ww_logo.ax.set_xticklabels(range (xi_ind,len(df)+xi_ind,2))
     ww_logo.ax.set_yticks([0, 0.5, 1.0])
     ww_logo.ax.set_ylabel('probability')
-    ww_logo.fig.savefig('./pred_result/static/pred_result/images/' + figure_name) #setting relative path #added by arunima 05.13.2021
+    ww_logo.fig.savefig('./pred_result/static/pred_result/images/' + figure_name,  bbox_inches='tight') #setting relative path #added by arunima 05.13.2021
     plt.clf()
     plt.cla()
 
@@ -272,7 +272,7 @@ def BBS_figure(Probability, figure_name):
     plt.bar(x, y, width=1.0, color='orange', edgecolor='r',tick_label=AA_1, alpha=0.8)
     plt.ylabel('probability')
     plt.xlim([-2,20])
-    plt.savefig('./pred_result/static/pred_result/images/' + figure_name)
+    plt.savefig('./pred_result/static/pred_result/images/' + figure_name, bbox_inches='tight')
 
 
 #if __name__=='__main__': 
