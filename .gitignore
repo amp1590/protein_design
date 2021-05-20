@@ -1,2 +1,1 @@
-
-*.env
+/protein_design/.env
